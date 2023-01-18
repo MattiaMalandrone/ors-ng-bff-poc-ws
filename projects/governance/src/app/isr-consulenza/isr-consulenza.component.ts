@@ -1,4 +1,7 @@
+import { IsrConsulenzaState } from './state/state';
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { IsrConsulenzaGuiActions } from './state/actions';
 
 @Component({
   selector: 'app-isr-consulenza',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class IsrConsulenzaComponent {
 
+  constructor(private store: Store<IsrConsulenzaState>) {
+  }
+
+  ngOnInit() {
+    this.store.dispatch(IsrConsulenzaGuiActions.init({ lockKey: "isr_key", pagination: {}, sort: {} }));
+  }
 }

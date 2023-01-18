@@ -1,0 +1,6 @@
+{
+  "/governance/sync": {
+    "target": "http://localhost:53097",
+    "secure": false
+  }
+}
