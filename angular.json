@@ -78,6 +78,15 @@
             "browserTarget": "governance:build"
           }
         },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/governance/**/*.ts",
+              "projects/governance/**/*.html"
+            ]
+          }
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
