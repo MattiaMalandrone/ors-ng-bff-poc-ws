@@ -15,7 +15,7 @@ export class ServerSynchronizerService {
 
   constructor(private readonly http: HttpClient, private readonly store: Store) { }
 
-  commandRequested<TRequest>(action: string, payload: TRequest): Observable<void> {
+  commandRequested<TRequest>(action: string, payload: TRequest): Observable<any> {
     return this.http.post<SyncPayload>(`${this.baseUrl}/${action}`, { payload }).pipe(
       map((syncPayload: SyncPayload) => this.sync(syncPayload)),
       catchError(() => of())
@@ -24,7 +24,7 @@ export class ServerSynchronizerService {
 
   sync(syncPayload: SyncPayload): void {
     syncPayload.effects.forEach((effect: Effect) => {
-      const action = createAction(effect.type, props<{ payload: any }>());
+      const action = createAction(effect.type, props<{ payload: unknown }>());
       this.store.dispatch(action({ payload: effect.payload }));
     })
   }

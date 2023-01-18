@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, SortDirection } from '@angular/material/sort';
 import { catchError, map, merge, Observable, of, startWith, switchMap } from 'rxjs';
@@ -9,7 +9,7 @@ import { catchError, map, merge, Observable, of, startWith, switchMap } from 'rx
   templateUrl: './isr-consulenza-grid.component.html',
   styleUrls: ['./isr-consulenza-grid.component.css']
 })
-export class IsrConsulenzaGridComponent {
+export class IsrConsulenzaGridComponent implements AfterViewInit {
   displayedColumns: string[] = ['created', 'state', 'number', 'title', 'actions'];
   exampleDatabase!: ExampleHttpDatabase | null;
   data: GithubIssue[] = [];
