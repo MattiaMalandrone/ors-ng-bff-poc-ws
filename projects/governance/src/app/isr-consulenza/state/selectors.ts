@@ -1,25 +1,33 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { IsrConsulenzaState, selectAll, selectEntities } from "./state";
+import { IsrConsulenzaState } from "./state";
 
 export const isrConsulenzaFeature = "isrConsulenzaFeature";
 
-const selectIsrConsulenzaFeature = createFeatureSelector<IsrConsulenzaState>(isrConsulenzaFeature);
+export const selectIsrConsulenzaFeature = createFeatureSelector<IsrConsulenzaState>(isrConsulenzaFeature);
 
-export const selectActiveIsrId = (state: IsrConsulenzaState) => state.activeIsrId;
-
-export const selectActiveIsrEntity = createSelector(
-  selectEntities,
-  selectActiveIsrId,
-  (isrsEntities, activeIsrId) => activeIsrId ? isrsEntities[activeIsrId]! : null
-);
-
-export const selectActiveIsr = createSelector(
+export const selectActiveIsrId = createSelector(
   selectIsrConsulenzaFeature,
-  selectActiveIsrEntity
-);
+  (state: IsrConsulenzaState) => state.activeIsrId
+)
 
-export const selectAllIsrs = createSelector(
-  selectIsrConsulenzaFeature,
-  selectAll
-);
+// export const selectFeatureCount = createSelector(
+//   selectIsrConsulenzaFeature,
+//   (state: IsrConsulenzaState) => state.activeIsrId
+// );
+
+// export const selectActiveIsrEntity = createSelector(
+//   selectEntities,
+//   selectActiveIsrId,
+//   (isrsEntities, activeIsrId) => activeIsrId ? isrsEntities[activeIsrId]! : null
+// );
+
+// export const selectActiveIsr = createSelector(
+//   selectIsrConsulenzaFeature,
+//   selectActiveIsrEntity
+// );
+
+// export const selectAllIsrs = createSelector(
+//   selectIsrConsulenzaFeature,
+//   selectAll
+// );
 

@@ -1,6 +1,11 @@
 <p class="p-container">
-  <mat-list role="list">
-    <!-- <mat-list-item role="listitem" *ngFor="let link of isrs$ | async">Item ??</mat-list-item> -->
-  </mat-list>
+  <app-isr-consulenza-manager [activeIsrId]="activeIsrId$ | async" />
+  ID: {{activeId}}
+  <ng-component *ngIf="state$ | async as vm">
+    {{vm.name}}
+  </ng-component>
+  <!-- <mat-list role="list"> -->
+  <!-- <mat-list-item role="listitem" *ngFor="let link of isrs$ | async">Item ??</mat-list-item> -->
+  <!-- </mat-list> -->
   <!-- <app-isr-consulenza-grid></app-isr-consulenza-grid> -->
 </p>

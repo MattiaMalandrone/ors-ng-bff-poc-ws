@@ -1,14 +1,14 @@
 import { createAction, props } from "@ngrx/store";
-import { IsrRequiredProps } from "../../../shared/models/isr.model";
+import { InitCommand } from "../../../models/init.model";
 
 export const init = createAction(
   "isr-consulenza/init",
-  props<{ pagination: any, sort: any, lockKey: string }>()
+  props<{ payload: InitCommand }>()
 );
 
 export const selectIsr = createAction(
   "isr-consulenza/setCurrentIsrId",
-  props<{ id: string }>()
+  props<{ payload: { id: number } }>()
 );
 
 // export const clearSelectedIsr = createAction(

@@ -1,25 +1,16 @@
-import { Action, createReducer, on } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
 import { IsrConsulenzaGuiActions, IsrConsulenzaApiActions } from "./actions";
-import { initialState, adapter, IsrConsulenzaState } from "./state";
+import { initialState } from "./state";
 
 export const isrConsulenzaReducer = createReducer(
   initialState,
-  // on(IsrConsulenzaGuiActions.clearSelectedIsr, IsrConsulenzaGuiActions.init, state => {
-  //   return {
-  //     ...state,
-  //     activeIsrId: null
-  //   };
-  // }),
   on(IsrConsulenzaGuiActions.selectIsr, (state, action) => {
     console.log(action);
     return {
       ...state,
-      activeIsrId: action.id
+      activeIsrId: action.payload.id
     };
   }),
-  // on(IsrConsulenzaApiActions.isrsLoaded, (state, action) => {
-  //   return adapter.setAll(action.isrs, state);
-  // }),
   on(IsrConsulenzaApiActions.isrsLoaded, (state, action) => {
     console.log(action);
     return {
@@ -28,6 +19,12 @@ export const isrConsulenzaReducer = createReducer(
       total: action.payload.total
     }
   }),
+  // on(IsrConsulenzaGuiActions.clearSelectedIsr, IsrConsulenzaGuiActions.init, state => {
+  //   return {
+  //     ...state,
+  //     activeIsrId: null
+  //   };
+  // }),
   // on(IsrConsulenzaApiActions.isrCreated, (state, action) => {
   //   return adapter.addOne(action.isr, {
   //     ...state,

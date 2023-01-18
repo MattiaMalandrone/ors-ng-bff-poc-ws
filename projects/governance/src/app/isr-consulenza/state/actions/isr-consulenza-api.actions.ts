@@ -1,17 +1,9 @@
 import { createAction, props } from "@ngrx/store";
-import { IsrModel } from "../../../shared/models/isr.model";
-
-export interface DataGridPayload {
-  data: any[]
-  total: number,
-  skip: number,
-  take: number,
-  sort: any[]
-}
+import { IsrLoadedDTO } from "../../models/isr-loaded.model";
 
 export const isrsLoaded = createAction(
   "isr-consulenza/loaded",
-  props<{ payload: DataGridPayload }>()
+  props<{ payload: IsrLoadedDTO }>()
 );
 
 // export const isrCreated = createAction(

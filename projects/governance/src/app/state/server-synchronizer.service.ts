@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { createAction, props, Store } from '@ngrx/store';
 import { Effect } from './models/effect.model';
-import { catchError, map, of } from 'rxjs';
+import { catchError, map, of, Observable } from 'rxjs';
 import { SyncPayload } from './models/sync-payload.model';
 
 @Injectable({
@@ -15,11 +15,9 @@ export class ServerSynchronizerService {
 
   constructor(private readonly http: HttpClient, private readonly store: Store) { }
 
-  commandRequested(action: string, payload: any) {
-    return this.http.post<any>(`${this.baseUrl}/${action}`, { payload }).pipe(
-      map((syncPayload: SyncPayload) => {
-        this.sync(syncPayload);
-      }),
+  commandRequested<TRequest>(action: string, payload: TRequest): Observable<void> {
+    return this.http.post<SyncPayload>(`${this.baseUrl}/${action}`, { payload }).pipe(
+      map((syncPayload: SyncPayload) => this.sync(syncPayload)),
       catchError(() => of())
     );
   }
