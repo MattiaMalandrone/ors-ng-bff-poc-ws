@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { IsrConsulenzaState } from './state/state';
-import { Component } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { IsrConsulenzaGuiActions } from './state/actions';
 import * as selectors from './state/selectors';
 
@@ -10,12 +10,10 @@ import * as selectors from './state/selectors';
   templateUrl: './isr-consulenza.component.html',
   styleUrls: ['./isr-consulenza.component.css']
 })
-export class IsrConsulenzaComponent {
+export class IsrConsulenzaComponent implements OnInit {
 
   state$ = this.store.select(selectors.selectIsrConsulenzaFeature);
   activeIsrId$ = this.store.select(selectors.selectActiveIsrId);
-
-  activeId!: number | null
 
   // We can add the facade pattern to abstract the use of the store
   constructor(private store: Store<IsrConsulenzaState>) {
