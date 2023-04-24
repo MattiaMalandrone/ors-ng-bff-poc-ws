@@ -1,7 +1,7 @@
 import { IsrLoadedDTO } from './../models/isr-loaded.model';
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { switchMap } from "rxjs/operators";
+import { exhaustMap } from "rxjs/operators";
 
 import { IsrConsulenzaGuiActions } from './actions';
 import { ServerSynchronizerService } from '../../state/server-synchronizer.service';
@@ -12,7 +12,7 @@ export class IsrConsulenzaEffects {
 
   initIsrConsulenza$ = createEffect(() => this.actions$.pipe(
     ofType(IsrConsulenzaGuiActions.init),
-    switchMap(({ payload }) => this.server.commandRequested<InitCommand>(IsrConsulenzaGuiActions.init.type, payload))
+    exhaustMap(({ payload }) => this.server.commandRequested<InitCommand>(IsrConsulenzaGuiActions.init.type, payload))
   ), { dispatch: false });
 
   constructor(
