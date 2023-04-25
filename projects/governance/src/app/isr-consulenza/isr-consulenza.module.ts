@@ -1,14 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
-import { SharedModule } from './../shared/shared.module';
-import { NgModule } from '@angular/core';
+
+import { EffectsModule } from '@ngrx/effects';
 import { IsrConsulenzaComponent } from './isr-consulenza.component';
+import { IsrConsulenzaEffects } from './state/effects';
 import { IsrConsulenzaGridComponent } from './isr-consulenza-grid/isr-consulenza-grid.component';
 import { IsrConsulenzaManagerComponent } from './isr-consulenza-manager/isr-consulenza-manager.component';
+import { NgModule } from '@angular/core';
+import { SharedModule } from './../shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
+import { isrConsulenzaFeature } from './state';
 import { isrConsulenzaReducer } from './state/reducer';
-import { isrConsulenzaFeature } from './state/selectors';
-import { IsrConsulenzaEffects } from './state/effects';
 
 const routes: Routes = [
   {

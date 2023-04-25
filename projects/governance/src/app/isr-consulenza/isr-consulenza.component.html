@@ -1,10 +1,11 @@
 <p class="p-container">
-  <app-isr-consulenza-manager [activeIsrId]="activeIsrId$ | async" />
+  <app-isr-consulenza-manager [currentIsr]="currentIsr$ | async" />
+  <button mat-flat-button (click)="openDialog()">Basic</button>
   <!-- <ng-component *ngIf="state$ | async as vm">
     {{vm.name}}
   </ng-component> -->
   <!-- <mat-list role="list"> -->
   <!-- <mat-list-item role="listitem" *ngFor="let link of isrs$ | async">Item ??</mat-list-item> -->
   <!-- </mat-list> -->
-  <!-- <app-isr-consulenza-grid></app-isr-consulenza-grid> -->
+  <app-isr-consulenza-grid></app-isr-consulenza-grid>
 </p>
