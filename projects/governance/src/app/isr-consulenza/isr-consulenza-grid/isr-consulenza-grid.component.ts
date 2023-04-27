@@ -32,6 +32,33 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
   data: GithubIssue[] = [];
   selection = new SelectionModel<GithubIssue>(true, []);
 
+  columns = [
+    {
+      columnDef: 'number',
+      type: 'number',
+      header: 'No.',
+      cell: (element: GithubIssue) => `${element.number}`,
+    },
+    {
+      columnDef: 'title',
+      type: 'string',
+      header: 'Title',
+      cell: (element: GithubIssue) => `${element.title}`,
+    },
+    {
+      columnDef: 'state',
+      type: 'string',
+      header: 'State',
+      cell: (element: GithubIssue) => `${element.state}`,
+    },
+    {
+      columnDef: 'created',
+      type: 'date',
+      header: 'Created',
+      cell: (element: GithubIssue) => `${element.created_at}`,
+    },
+  ];
+
   resultsLength = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
@@ -40,29 +67,6 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _httpClient: HttpClient) {}
-
-  columns = [
-    {
-      columnDef: 'number',
-      header: 'No.',
-      cell: (element: GithubIssue) => `${element.number}`,
-    },
-    {
-      columnDef: 'title',
-      header: 'Title',
-      cell: (element: GithubIssue) => `${element.title}`,
-    },
-    {
-      columnDef: 'state',
-      header: 'State',
-      cell: (element: GithubIssue) => `${element.state}`,
-    },
-    {
-      columnDef: 'created_at',
-      header: 'Created At',
-      cell: (element: GithubIssue) => `${element.created_at}`,
-    },
-  ];
 
   ngAfterViewInit() {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
