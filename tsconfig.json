@@ -20,9 +20,8 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "ui": [
-        "dist/ui"
-      ]
+      "@lib/enum/column-type": ["projects/ui/src/lib/cells/column-type.enum.ts"],
+      "@lib/ui": ["projects/ui/src/public-api.ts"],
     },
     "lib": [
       "ES2022",

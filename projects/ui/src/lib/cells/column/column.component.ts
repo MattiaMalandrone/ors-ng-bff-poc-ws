@@ -14,26 +14,30 @@ import { StringCellComponent } from '../string-cell/string-cell.component';
 })
 export class ColumnComponent implements OnInit {
   @Input() type: string = "";
+  @Input() col: any
 
   @ViewChild(ColumnDirective, { static: true }) columnHost!: ColumnDirective;
 
   cells = [
-    new ColumnItem(StringCellComponent, "string" {}),
-    new ColumnItem(NumericCellComponent, "number" {}),
-    new ColumnItem(DateCellComponent, "date", {}),
-    new ColumnItem(CurrencyCellComponent, "currency", {}),
+    new ColumnItem<StringCellComponent>(StringCellComponent, "string", {}),
+    new ColumnItem<NumericCellComponent>(NumericCellComponent, "number", {}),
+    new ColumnItem<DateCellComponent>(DateCellComponent, "date", {}),
+    new ColumnItem<CurrencyCellComponent>(CurrencyCellComponent, "currency", {}),
   ];
 
   ngOnInit(): void {
-    // this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
     const columnItem = this.cells.find(c => c.cellType === this.type);
+
+    if(!columnItem)
+      throw new TypeError('Value not found in collection')
+
     const viewContainerRef = this.columnHost.viewContainerRef;
     viewContainerRef.clear();
-    const componentRef = viewContainerRef.createComponent(columnItem?.component);
-    // componentRef.instance.data = adItem.data;
+    const componentRef = viewContainerRef.createComponent<BaseCellComponent>(columnItem.component);
+    componentRef.instance.data = this.col;
   }
 }
 
-export class ColumnItem {
-  constructor(public component: Type<BaseCellComponent>, public cellType: string, public data: any) {}
+export class ColumnItem<T> {
+  constructor(public component: Type<T>, public cellType: string, public data: any) {}
 }

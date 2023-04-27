@@ -13,6 +13,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
+import { ColumnType } from "@lib/enum/column-type";
 
 @Component({
   selector: 'app-isr-consulenza-grid',
@@ -35,27 +36,23 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
   columns = [
     {
       columnDef: 'number',
-      type: 'number',
+      type: ColumnType.Number,
       header: 'No.',
-      cell: (element: GithubIssue) => `${element.number}`,
     },
     {
       columnDef: 'title',
       type: 'string',
       header: 'Title',
-      cell: (element: GithubIssue) => `${element.title}`,
     },
     {
       columnDef: 'state',
       type: 'string',
       header: 'State',
-      cell: (element: GithubIssue) => `${element.state}`,
     },
     {
       columnDef: 'created',
       type: 'date',
       header: 'Created',
-      cell: (element: GithubIssue) => `${element.created_at}`,
     },
   ];
 
@@ -166,7 +163,7 @@ export interface GithubApi {
 }
 
 export interface GithubIssue {
-  created_at: string;
+  created_at: Date;
   number: string;
   state: string;
   title: string;

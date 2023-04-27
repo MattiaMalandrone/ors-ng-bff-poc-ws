@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UiModule } from 'projects/ui/src/lib/ui.module';
+import { UiModule } from '@lib/ui';
 
 @NgModule({
   declarations: [],

@@ -38,8 +38,7 @@
         {{ column.header }}
       </th>
       <td mat-cell *matCellDef="let row">
-        <!-- {{ column.cell(row) }} -->
-        <column [colType]="column.type"></column>
+        <column [type]="column.type" [col]="row[column.columnDef]"></column>
       </td>
     </ng-container>
 
