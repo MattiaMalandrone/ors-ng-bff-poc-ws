@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { ColumnType } from "@lib/enum/column-type";
+import { Column } from "@lib/ui/mega-grid/types";
 
 @Component({
   selector: 'app-isr-consulenza-grid',
@@ -22,43 +23,41 @@ import { ColumnType } from "@lib/enum/column-type";
 })
 export class IsrConsulenzaGridComponent implements AfterViewInit {
   displayedColumns: string[] = [
-    'select',
     'created',
     'state',
     'number',
     'title',
-    'actions',
   ];
   exampleDatabase!: ExampleHttpDatabase | null;
   data: GithubIssue[] = [];
   selection = new SelectionModel<GithubIssue>(true, []);
 
-  columns = [
+  columns: Column[] = [
     {
-      columnDef: 'number',
+      name: 'number',
       type: ColumnType.Number,
-      header: 'No.',
+      label: 'No.',
     },
     {
-      columnDef: 'title',
-      type: 'string',
-      header: 'Title',
+      name: 'title',
+      label: 'Title',
+      type: ColumnType.String,
     },
     {
-      columnDef: 'state',
-      type: 'string',
-      header: 'State',
+      name: 'state',
+      label: 'State',
+      type: ColumnType.String,
     },
     {
-      columnDef: 'created',
-      type: 'date',
-      header: 'Created',
+      name: 'created',
+      label: 'Created',
+      type: ColumnType.Date,
     },
   ];
 
   resultsLength = 0;
   isLoadingResults = true;
-  isRateLimitReached = false;
+  isRateLimitReached = false
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -68,37 +67,13 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
 
-    // If the user changes the sort order, reset back to the first page.
-    this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
-
-    merge(this.sort.sortChange, this.paginator.page)
-      .pipe(
-        startWith({}),
-        switchMap(() => {
-          this.isLoadingResults = true;
-          return this.exampleDatabase!.getRepoIssues(
-            this.sort.active,
-            this.sort.direction,
-            this.paginator.pageIndex
-          ).pipe(catchError(() => of(null)));
-        }),
-        map((data) => {
-          // Flip flag to show that loading has finished.
-          this.isLoadingResults = false;
-          this.isRateLimitReached = data === null;
-
-          if (data === null) {
-            return [];
-          }
-
-          // Only refresh the result length if there is new data. In case of rate
-          // limit errors, we do not want to reset the paginator to zero, as that
-          // would prevent users from re-triggering requests.
-          this.resultsLength = data.total_count;
-          return data.items;
-        })
-      )
-      .subscribe((data) => (this.data = data));
+        this.exampleDatabase!.getRepoIssues().pipe(
+            map((data) => {
+              if (data === null) return [];
+              this.resultsLength = data.total_count;
+              return data.items;
+            })
+          ).subscribe((data) => (this.data = data));
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
@@ -130,31 +105,11 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
 
   publish(): void {}
 
-  edit(
-    i: number,
-    id: number,
-    title: string,
-    state: string,
-    url: string,
-    created_at: string,
-    updated_at: string
-  ): void {}
+  edit(i: number, row: any): void {}
 
-  view(
-    i: number,
-    id: number,
-    title: string,
-    state: string,
-    url: string
-  ): void {}
+  view(i: number): void {}
 
-  delete(
-    i: number,
-    id: number,
-    title: string,
-    state: string,
-    url: string
-  ): void {}
+  delete(i: number): void {}
 }
 
 export interface GithubApi {
@@ -173,15 +128,9 @@ export interface GithubIssue {
 export class ExampleHttpDatabase {
   constructor(private _httpClient: HttpClient) {}
 
-  getRepoIssues(
-    sort: string,
-    order: SortDirection,
-    page: number
-  ): Observable<GithubApi> {
+  getRepoIssues(): Observable<GithubApi> {
     const href = 'https://api.github.com/search/issues';
-    const requestUrl = `${href}?q=repo:angular/components&sort=${sort}&order=${order}&page=${
-      page + 1
-    }`;
+    const requestUrl = `${href}?q=repo:angular/components&page=1`;
 
     return this._httpClient.get<GithubApi>(requestUrl);
   }

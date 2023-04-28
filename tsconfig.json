@@ -22,6 +22,7 @@
     "paths": {
       "@lib/enum/column-type": ["projects/ui/src/lib/cells/column-type.enum.ts"],
       "@lib/ui": ["projects/ui/src/public-api.ts"],
+      "@lib/ui/mega-grid/types": ["projects/ui/src/lib/mega-grid/model"],
     },
     "lib": [
       "ES2022",

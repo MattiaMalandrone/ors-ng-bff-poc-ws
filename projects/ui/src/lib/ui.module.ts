@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { DateCellComponent } from './cells/date-cell/date-cell.component';
 import { CommonModule } from '@angular/common';
 import { CheckboxCellComponent } from './cells/checkbox-cell/checkbox-cell.component';
@@ -9,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { NumericCellComponent } from './cells/numeric-cell/numeric-cell.component';
 import { StringCellComponent } from './cells/string-cell/string-cell.component';
 import { UiComponent } from './ui.component';
+import { MegaGridComponent } from './mega-grid/mega-grid.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { UiComponent } from './ui.component';
     NumericCellComponent,
     ColumnComponent,
     DateCellComponent,
+    MegaGridComponent,
   ],
-  imports: [MatCheckboxModule, CommonModule],
-  exports: [UiComponent, CheckboxCellComponent, ColumnComponent],
+  imports: [MatCheckboxModule, CommonModule, MaterialModule],
+  exports: [MegaGridComponent, UiComponent, CheckboxCellComponent, ColumnComponent, MaterialModule],
 })
 export class UiModule {}
