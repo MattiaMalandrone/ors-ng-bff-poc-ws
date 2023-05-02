@@ -1,0 +1,3229 @@
+{
+	"errorSummary": null,
+	"effects": [
+		{
+			"type": "initial/unknownassetpositions/updated",
+			"payload": {
+				"show": true,
+				"unknownAssetPositions": [
+					{
+						"assetBackOfficeCode": "PMUA0126657",
+						"valueReferenceCurrency": 407.817,
+						"valueAssetCurrency": 407.817,
+						"subAccountCode": "00000",
+						"assetContract": ""
+					}
+				]
+			}
+		},
+		{
+			"type": "workflow/navigation/disabled/updated",
+			"payload": {
+				"nextStepDisabled": false,
+				"previousStepDisabled": false
+			}
+		},
+		{
+			"type": "workflow/status/updated",
+			"payload": {
+				"currentStep": "1"
+			}
+		},
+		{
+			"type": "workflow/navigation/disabled/updated",
+			"payload": {
+				"nextStepDisabled": false,
+				"previousStepDisabled": true
+			}
+		},
+		{
+			"type": "customerInfo/updated",
+			"payload": {
+				"ndg": "003445035",
+				"advisoryContractCode": "0020043840900000",
+				"advisoryContractType": {
+					"it": "Retail Full"
+				},
+				"investmentTargetCode": "02",
+				"investmentTarget": {
+					"it": "Moderato",
+					"en": "Moderato"
+				},
+				"financialExperienceCode": "03",
+				"financialExperience": {
+					"it": "Medio Alta",
+					"en": "Medio Alta"
+				},
+				"abilityToBearLossesCode": "01",
+				"abilityToBearLosses": {
+					"it": "Bassa",
+					"en": "Bassa"
+				},
+				"isLeiValid": true,
+				"purpose": [
+					{
+						"purpose": {
+							"it": "Liquidità",
+							"en": "Liquidità"
+						},
+						"enable": true
+					},
+					{
+						"purpose": {
+							"it": "Breve Termine",
+							"en": "Breve Termine"
+						},
+						"enable": true
+					},
+					{
+						"purpose": {
+							"it": "Risparmio",
+							"en": "Risparmio"
+						},
+						"enable": true
+					},
+					{
+						"purpose": {
+							"it": "Investimento MLT",
+							"en": "Investimento MLT"
+						},
+						"enable": true
+					},
+					{
+						"purpose": {
+							"it": "Speculativo",
+							"en": "Speculativo"
+						},
+						"enable": false
+					}
+				],
+				"mifidCustomerType": {
+					"it": "Cliente al dettaglio",
+					"en": "Cliente al dettaglio"
+				}
+			}
+		},
+		{
+			"type": "initial/exposure/updated",
+			"payload": {
+				"portfolioDescription": null,
+				"isr": 7.265976017034355,
+				"isrMax": 14.0,
+				"isrTarget": [
+					0,
+					7.0,
+					14.0,
+					21.0,
+					28.0
+				],
+				"exposure": [
+					{
+						"macroAssetClassCode": "EQT",
+						"description": {
+							"it": "Azioni",
+							"en": "Azioni"
+						},
+						"exposurePercentage": 38.09559092599564,
+						"exposureValue": {
+							"value": 709114.28,
+							"currency": "EUR"
+						},
+						"color": "#e65f20",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -234406150.9712764,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -99.69839717585239
+						},
+						"microAssetClassExposure": [
+							{
+								"description": {
+									"it": "Azioni Europa",
+									"en": "Azioni Europa"
+								},
+								"exposurePercentage": 5.837511974035544,
+								"exposureValue": {
+									"value": 108659.9,
+									"currency": "EUR"
+								}
+							},
+							{
+								"description": {
+									"it": "Azioni Europa ex EMU",
+									"en": "Azioni Europa ex EMU"
+								},
+								"exposurePercentage": 0.3682696614115571,
+								"exposureValue": {
+									"value": 6855.0,
+									"currency": "EUR"
+								}
+							},
+							{
+								"description": {
+									"it": "Azioni Giappone",
+									"en": "Azioni Giappone"
+								},
+								"exposurePercentage": 4.3322675655891829,
+								"exposureValue": {
+									"value": 80641.164,
+									"currency": "EUR"
+								}
+							},
+							{
+								"description": {
+									"it": "Azioni Globali",
+									"en": "Azioni Globali"
+								},
+								"exposurePercentage": 0.34311751507190599,
+								"exposureValue": {
+									"value": 6386.816,
+									"currency": "EUR"
+								}
+							},
+							{
+								"description": {
+									"it": "Azioni Italia",
+									"en": "Azioni Italia"
+								},
+								"exposurePercentage": 24.932216020192827,
+								"exposureValue": {
+									"value": 464090.2,
+									"currency": "EUR"
+								}
+							},
+							{
+								"description": {
+									"it": "Azioni Nord America",
+									"en": "Azioni Nord America"
+								},
+								"exposurePercentage": 2.282208189694623,
+								"exposureValue": {
+									"value": 42481.2,
+									"currency": "EUR"
+								}
+							}
+						],
+						"isr": 12.7380440676806
+					},
+					{
+						"macroAssetClassCode": "BND",
+						"description": {
+							"it": "Obbligazioni",
+							"en": "Obbligazioni"
+						},
+						"exposurePercentage": 0.13286814813376636,
+						"exposureValue": {
+							"value": 2473.218,
+							"currency": "EUR"
+						},
+						"color": "#242dab",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -0.00002,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -8.086630389341898e-7
+						},
+						"microAssetClassExposure": [
+							{
+								"description": {
+									"it": "Bond Corporate Inv Grade Internazionale",
+									"en": "Bond Corporate Inv Grade Internazionale"
+								},
+								"exposurePercentage": 0.13286814813376636,
+								"exposureValue": {
+									"value": 2473.218,
+									"currency": "EUR"
+								}
+							}
+						],
+						"isr": 2.8005
+					},
+					{
+						"macroAssetClassCode": "DIV",
+						"description": {
+							"it": "Attivi di Diversificazione",
+							"en": "Attivi di Diversificazione"
+						},
+						"exposurePercentage": 60.395793614794488,
+						"exposureValue": {
+							"value": 1124211.98,
+							"currency": "EUR"
+						},
+						"color": "#619f38",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -65873370.07676,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -98.3220111151958
+						},
+						"microAssetClassExposure": [
+							{
+								"description": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"exposurePercentage": 60.395793614794488,
+								"exposureValue": {
+									"value": 1124211.98,
+									"currency": "EUR"
+								}
+							}
+						],
+						"isr": 3.747249795345536
+					},
+					{
+						"macroAssetClassCode": "BAL",
+						"description": {
+							"it": "Bilanciati Flessibili",
+							"en": "Bilanciati Flessibili"
+						},
+						"exposurePercentage": 0.7683333777038732,
+						"exposureValue": {
+							"value": 14301.817,
+							"currency": "EUR"
+						},
+						"color": "#cf5582",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -9988518.284875,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -99.85702215120995
+						},
+						"microAssetClassExposure": [
+							{
+								"description": {
+									"it": "Bilanciati/Flessibili",
+									"en": "Bilanciati/Flessibili"
+								},
+								"exposurePercentage": 0.7683333777038732,
+								"exposureValue": {
+									"value": 14301.817,
+									"currency": "EUR"
+								}
+							}
+						],
+						"isr": 18.709911226063097
+					},
+					{
+						"macroAssetClassCode": "CSH",
+						"description": {
+							"it": "Liquidità",
+							"en": "Liquidità"
+						},
+						"exposurePercentage": 0.6074139333722392,
+						"exposureValue": {
+							"value": 11306.45,
+							"currency": "EUR"
+						},
+						"color": "#298cd2",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0
+						},
+						"microAssetClassExposure": [
+							{
+								"description": {
+									"it": "Liquidità €/Gestione Separata",
+									"en": "Liquidità €/Gestione Separata"
+								},
+								"exposurePercentage": 0.6074139333722392,
+								"exposureValue": {
+									"value": 11306.45,
+									"currency": "EUR"
+								}
+							}
+						],
+						"isr": 0
+					}
+				]
+			}
+		},
+		{
+			"type": "initial/liquidityinfo/updated",
+			"payload": {
+				"cashAccountValueAsIs": {
+					"value": 212948.34,
+					"currency": "EUR"
+				},
+				"portfolioValueAsIs": {
+					"value": 1861407.745,
+					"currency": "EUR"
+				}
+			}
+		},
+		{
+			"type": "initial/policy/updated",
+			"payload": {
+				"data": [
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "Omw1-amundifdsconvertibl",
+									"externalResource": true,
+									"compositePolicyLine": "LU0568615305",
+									"otherInfos": {
+										"backOfficeCode": "OMW11AG4021",
+										"description": "Omw1-amundifdsconvertibleeuropese-c",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Other",
+											"en": "Other"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "OMW1234",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 0.6,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "3 - 5 anni",
+										"en": "3 - 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.05372278065814108,
+								"positionValue": {
+									"value": 1000.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 0.0,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 0.0
+								},
+								"rowId": "AssetPositionKey:703012-00000-OMW1234-0020043840900000-_N_-"
+							},
+							{
+								"policyInfo": {
+									"assetProductCode": "Omw1-amundifdsbdglobalag",
+									"externalResource": true,
+									"compositePolicyLine": "LU0839535514",
+									"otherInfos": {
+										"backOfficeCode": "OMW11AG4022",
+										"description": "Omw1-amundifdsbdglobalaggregateie-c",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Other",
+											"en": "Other"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "OMW1234",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 0.6,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "> 5 anni",
+										"en": "> 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.04835050259232697,
+								"positionValue": {
+									"value": 900.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 0.0,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 0.0
+								},
+								"rowId": "AssetPositionKey:703013-00000-OMW1234-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "Multiramo",
+							"externalResource": false,
+							"compositePolicyLine": null,
+							"otherInfos": {
+								"backOfficeCode": "OMW1",
+								"description": "Multiramo",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "OMW1234",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 0.6,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.10207328325046805,
+						"positionValue": {
+							"value": 1900.0,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"rowId": "CompositePolicyContractKey:701947-00000-OMW1234-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "Dws concept kaldemorgen",
+									"externalResource": true,
+									"compositePolicyLine": "LU0599947271",
+									"otherInfos": {
+										"backOfficeCode": "PMUA669",
+										"description": "Dws concept kaldemorgen",
+										"subAccountCode": "00001",
+										"microAssetClass": {
+											"it": "Other",
+											"en": "Other"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "PMUA0174880",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 4.123,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "3 - 5 anni",
+										"en": "3 - 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 54.87675995460092,
+								"positionValue": {
+									"value": 1021480.26,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": -0.06504,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": -0.00000636722983357052
+								},
+								"rowId": "AssetPositionKey:704847-00001-PMUA0174880-0020043840900000-_N_-"
+							},
+							{
+								"policyInfo": {
+									"assetProductCode": "Dws invest top dividend",
+									"externalResource": true,
+									"compositePolicyLine": "LU0507265923",
+									"otherInfos": {
+										"backOfficeCode": "PMUA333",
+										"description": "Dws invest top dividend",
+										"subAccountCode": "00001",
+										"microAssetClass": {
+											"it": "Azioni Globali",
+											"en": "Azioni Globali"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "PMUA0174880",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 6.6926,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "3 - 5 anni",
+										"en": "3 - 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.34311751507190599,
+								"positionValue": {
+									"value": 6386.816,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 0.00041,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 0.000006419474528776867
+								},
+								"rowId": "AssetPositionKey:671137-00001-PMUA0174880-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "BNL private selection",
+							"externalResource": false,
+							"compositePolicyLine": "Linea libera",
+							"otherInfos": {
+								"backOfficeCode": "PMUA",
+								"description": "BNL private selection",
+								"subAccountCode": "00001",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "PMUA0174880",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 4.13896661939739,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "1 - 3 anni",
+								"en": "1 - 3 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 55.219877469672827,
+						"positionValue": {
+							"value": 1027867.076,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": -0.06463,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -0.00000628777761689969
+						},
+						"rowId": "CompositePolicyContractKey:595076-00001-PMUA0174880-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "Carmignac patrimoine",
+									"externalResource": true,
+									"compositePolicyLine": "FR0010135103",
+									"otherInfos": {
+										"backOfficeCode": "PMUA282",
+										"description": "Carmignac patrimoine",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Bilanciati/Flessibili",
+											"en": "Bilanciati/Flessibili"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "PMUA0126657",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 6.7537,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "3 - 5 anni",
+										"en": "3 - 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.13286814813376636,
+								"positionValue": {
+									"value": 2473.218,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": -0.00002,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": -8.086630389341898e-7
+								},
+								"rowId": "AssetPositionKey:595110-00000-PMUA0126657-0020043840900000-_N_-"
+							},
+							{
+								"policyInfo": {
+									"assetProductCode": "BNP paribas funds euro e",
+									"externalResource": true,
+									"compositePolicyLine": "LU0823401574",
+									"otherInfos": {
+										"backOfficeCode": "PMUA360",
+										"description": "BNP paribas funds euro equity",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Azioni Europa",
+											"en": "Azioni Europa"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "PMUA0126657",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 10.3494,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "> 5 anni",
+										"en": "> 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.01020195604698099,
+								"positionValue": {
+									"value": 189.9,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 189.45,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 42100.0
+								},
+								"rowId": "AssetPositionKey:675259-00000-PMUA0126657-0020043840900000-_N_-"
+							},
+							{
+								"policyInfo": {
+									"assetProductCode": "Schroder isf us dollar b",
+									"externalResource": true,
+									"compositePolicyLine": "LU0291343597",
+									"otherInfos": {
+										"backOfficeCode": "PMUA310",
+										"description": "Schroder isf us dollar bond",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Bond Corporate Inv Grade Internazionale",
+											"en": "Bond Corporate Inv Grade Internazionale"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "PMUA0126657",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 2.8005,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "Fino a 1 anno",
+										"en": "Less then 1 year"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.13286814813376636,
+								"positionValue": {
+									"value": 2473.218,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": -0.00002,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": -8.086630389341898e-7
+								},
+								"rowId": "AssetPositionKey:595132-00000-PMUA0126657-0020043840900000-_N_-"
+							},
+							{
+								"policyInfo": {
+									"assetProductCode": "M&g optimal income fund",
+									"externalResource": true,
+									"compositePolicyLine": "GB00B1VMD022",
+									"otherInfos": {
+										"backOfficeCode": "PMUA350",
+										"description": "M&g optimal income fund",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Bilanciati/Flessibili",
+											"en": "Bilanciati/Flessibili"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "PMUA0126657",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 2.6852,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "3 - 5 anni",
+										"en": "3 - 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.0176532520014845,
+								"positionValue": {
+									"value": 328.599,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 0.000145,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 0.000044126751445923329
+								},
+								"rowId": "AssetPositionKey:675250-00000-PMUA0126657-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "BNL private selection",
+							"externalResource": false,
+							"compositePolicyLine": "Aggressivo 40",
+							"otherInfos": {
+								"backOfficeCode": "PMUA",
+								"description": "BNL private selection",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "PMUA0126657",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 4.844947746020767,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "1 - 3 anni",
+								"en": "1 - 3 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.29359150431599825,
+						"positionValue": {
+							"value": 5464.935,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 189.450105,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 3.591141075573111
+						},
+						"rowId": "CompositePolicyContractKey:595076-00000-PMUA0126657-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "BNP paribas actions croi",
+									"externalResource": true,
+									"compositePolicyLine": "FR0010332759",
+									"otherInfos": {
+										"backOfficeCode": "TOP1054",
+										"description": "BNP paribas actions croissance isr",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Azioni Europa",
+											"en": "Azioni Europa"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "TOP1029385",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 7.513,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "> 5 anni",
+										"en": "> 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.05372278065814108,
+								"positionValue": {
+									"value": 1000.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 981.8369,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 5405.66808529381
+								},
+								"rowId": "AssetPositionKey:696316-00000-TOP1029385-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "Investipolizza BNL top",
+							"externalResource": false,
+							"compositePolicyLine": null,
+							"otherInfos": {
+								"backOfficeCode": "TOP1",
+								"description": "Investipolizza BNL top",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "TOP1029385",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 7.513,
+							"isCompliant": true,
+							"investmentTimeHorizon": {},
+							"ic": "",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.05372278065814108,
+						"positionValue": {
+							"value": 1000.0,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 981.8369,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 5405.66808529381
+						},
+						"rowId": "CompositePolicyContractKey:698431-00000-TOP1029385-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "Fondo protetto aqua 90",
+									"externalResource": true,
+									"compositePolicyLine": "FR0013237427",
+									"otherInfos": {
+										"backOfficeCode": "OPP5060",
+										"description": "Fondo protetto aqua 90",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Bilanciati/Flessibili",
+											"en": "Bilanciati/Flessibili"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "IbridaGestita",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 0,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "> 5 anni",
+										"en": "> 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.08058417098721162,
+								"positionValue": {
+									"value": 1500.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 1481.715,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 8103.445447087777
+								},
+								"rowId": "AssetPositionKey:702961-00000-IbridaGestita-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "Investipolizza BNL aqua",
+							"externalResource": false,
+							"compositePolicyLine": "Investipolizza BNL aqua",
+							"otherInfos": {
+								"backOfficeCode": "OPP5",
+								"description": "Investipolizza BNL aqua",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "IbridaGestita",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {},
+							"ic": "",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.08058417098721162,
+						"positionValue": {
+							"value": 1500.0,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 1481.715,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 8103.445447087777
+						},
+						"rowId": "CompositePolicyContractKey:704696-00000-IbridaGestita-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "BNP paribas insticash eu",
+									"externalResource": true,
+									"compositePolicyLine": "LU0167237543",
+									"otherInfos": {
+										"backOfficeCode": "REV1207",
+										"description": "BNP paribas insticash eur 1d short term vnav",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Other",
+											"en": "Other"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "REV1_LibDiIbriLib",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 0,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "Fino a 1 anno",
+										"en": "Less then 1 year"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.08058417098721162,
+								"positionValue": {
+									"value": 1500.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 1481.715,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 8103.445447087777
+								},
+								"rowId": "AssetPositionKey:698418-00000-REV1_LibDiIbriLib-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "BNL your life",
+							"externalResource": false,
+							"compositePolicyLine": "Linea libera",
+							"otherInfos": {
+								"backOfficeCode": "REV1",
+								"description": "BNL your life",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "REV1_LibDiIbriLib",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {},
+							"ic": "",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.08058417098721162,
+						"positionValue": {
+							"value": 1500.0,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 1481.715,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 8103.445447087777
+						},
+						"rowId": "CompositePolicyContractKey:595238-00000-REV1_LibDiIbriLib-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "BNP paribas actions croi",
+									"externalResource": true,
+									"compositePolicyLine": "FR0010332759",
+									"otherInfos": {
+										"backOfficeCode": "REV1054",
+										"description": "BNP paribas actions croissance isr",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Azioni Europa",
+											"en": "Azioni Europa"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "REV1IbridaLib",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 7.513,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "> 5 anni",
+										"en": "> 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.1343069516453527,
+								"positionValue": {
+									"value": 2500.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": 2469.6469,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": 8136.391011132306
+								},
+								"rowId": "AssetPositionKey:696300-00000-REV1IbridaLib-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "BNL your life",
+							"externalResource": false,
+							"compositePolicyLine": "Linea selezione europa",
+							"otherInfos": {
+								"backOfficeCode": "REV1",
+								"description": "BNL your life",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "REV1IbridaLib",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 7.513,
+							"isCompliant": true,
+							"investmentTimeHorizon": {},
+							"ic": "",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.1343069516453527,
+						"positionValue": {
+							"value": 2500.0,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 2469.6469,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 8136.391011132306
+						},
+						"rowId": "CompositePolicyContractKey:595238-00000-REV1IbridaLib-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": [
+							{
+								"policyInfo": {
+									"assetProductCode": "BNP paribas funds euro e",
+									"externalResource": true,
+									"compositePolicyLine": "LU0823401814",
+									"otherInfos": {
+										"backOfficeCode": "YOU2698",
+										"description": "BNP paribas funds euro equity",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Other",
+											"en": "Other"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "YOU20000125",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 0,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "> 5 anni",
+										"en": "> 5 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 1.0744556131628216,
+								"positionValue": {
+									"value": 20000.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": -82148.2631,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": -80.42061666734303
+								},
+								"rowId": "AssetPositionKey:712292-00000-YOU20000125-0020043840900000-_N_-"
+							},
+							{
+								"policyInfo": {
+									"assetProductCode": "BNP paribas funds euro h",
+									"externalResource": true,
+									"compositePolicyLine": "LU1022395633",
+									"otherInfos": {
+										"backOfficeCode": "YOU2670",
+										"description": "BNP paribas funds euro high yield s",
+										"subAccountCode": "00000",
+										"microAssetClass": {
+											"it": "Other",
+											"en": "Other"
+										}
+									},
+									"showWarning": false
+								},
+								"assetContractCode": "YOU20000125",
+								"synteticRiskIndex": null,
+								"mifidInfos": {
+									"isr": 0,
+									"isCompliant": true,
+									"investmentTimeHorizon": {
+										"it": "1 - 3 anni",
+										"en": "1 - 3 years"
+									},
+									"ic": "02",
+									"abilityToBearLosses": {},
+									"investmentTimeHorizonIsCompliant": true,
+									"icIsCompliant": true,
+									"abilityToBearLossesIsCompliant": true
+								},
+								"positionPercentage": 0.2686139032907054,
+								"positionValue": {
+									"value": 5000.0,
+									"currency": "EUR"
+								},
+								"profitLoss": {
+									"profitLoss": {
+										"value": -97148.2631,
+										"currency": "EUR"
+									},
+									"profitLossPercentage": -95.10515416683576
+								},
+								"rowId": "AssetPositionKey:712285-00000-YOU20000125-0020043840900000-_N_-"
+							}
+						],
+						"policyInfo": {
+							"assetProductCode": "Polizza powerplus",
+							"externalResource": false,
+							"compositePolicyLine": "Linea europa 80",
+							"otherInfos": {
+								"backOfficeCode": "YOU2",
+								"description": "Polizza powerplus",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "YOU20000125",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 0.0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {},
+							"ic": "",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 1.343069516453527,
+						"positionValue": {
+							"value": 25000.0,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": -179296.5262,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -87.7628854170894
+						},
+						"rowId": "CompositePolicyContractKey:712270-00000-YOU20000125-0020043840900000-_N_-"
+					},
+					{
+						"underlyingPositions": null,
+						"policyInfo": {
+							"assetProductCode": "BNL ies cedola dipendenti",
+							"externalResource": false,
+							"compositePolicyLine": null,
+							"otherInfos": {
+								"backOfficeCode": "FVUE095",
+								"description": "BNL ies cedola dipendenti",
+								"subAccountCode": "00000",
+								"microAssetClass": {
+									"it": "Liquidità €/Gestione Separata",
+									"en": "Liquidità €/Gestione Separata"
+								}
+							},
+							"showWarning": false
+						},
+						"assetContractCode": "FVUE8273912",
+						"synteticRiskIndex": null,
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"positionPercentage": 0.07018612679082842,
+						"positionValue": {
+							"value": 1306.45,
+							"currency": "EUR"
+						},
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"rowId": "AssetPositionKey:652049-00000-FVUE8273912-0020043840900000-_N_-"
+					}
+				],
+				"total": 9
+			}
+		},
+		{
+			"type": "initial/policy/total/updated",
+			"payload": {
+				"description": {
+					"it": "Totale"
+				},
+				"positionPercentage": 57.37799597476156,
+				"positionValue": {
+					"value": 1068038.461,
+					"currency": "EUR"
+				},
+				"profitLoss": {
+					"profitLoss": {
+						"value": -172692.226925,
+						"currency": "EUR"
+					},
+					"profitLossPercentage": -13.918590763142222
+				},
+				"totalISR": 4.033768912421217
+			}
+		},
+		{
+			"type": "initial/portfolio/updated",
+			"payload": {
+				"data": [
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 283.208,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "US0231351067",
+							"shortDescription": "Amazon com inc",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Amazon com inc",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000324480",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Nord America",
+									"en": "Azioni Nord America"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -43533.72537313433,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -50.611827173347219
+						},
+						"mifidInfos": {
+							"isr": 24.0783,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 42481.2,
+							"currency": "EUR"
+						},
+						"positionQuantity": 150.0,
+						"positionPercentage": 2.282208189694623,
+						"rowId": "AssetPositionKey:66659-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 10.96,
+							"currency": "EUR"
+						},
+						"lastPrice": {
+							"price": {
+								"value": 23.071385,
+								"currency": "EUR"
+							},
+							"date": "2014-01-31T00:00:00"
+						},
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "IT0001031084",
+							"shortDescription": "Banca generali spa",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Banca generali spa",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00003031720",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Italia",
+									"en": "Azioni Italia"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 14.2998,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 43840.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 4000.0,
+						"positionPercentage": 2.3552067040529049,
+						"rowId": "AssetPositionKey:77889-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 283.208,
+							"currency": "EUR"
+						},
+						"lastPrice": {
+							"price": {
+								"value": 21.67,
+								"currency": "EUR"
+							},
+							"date": "2014-01-29T00:00:00"
+						},
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "IT0000388808",
+							"shortDescription": "BNL azioni america",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNL azioni america pt",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000674720",
+								"classPlacement": "K",
+								"microAssetClass": {
+									"it": "Azioni Italia",
+									"en": "Azioni Italia"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": true
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -366.96417910447766,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -12.798854763144196
+						},
+						"mifidInfos": {
+							"isr": 9.5044,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 2500.2,
+							"currency": "EUR"
+						},
+						"positionQuantity": 5.0,
+						"positionPercentage": 0.13431769620148432,
+						"rowId": "AssetPositionKey:87345-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 1.49,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "FR0010332759",
+							"shortDescription": "BNP paribas actions croi",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNP paribas actions croissance isr",
+								"subAccountCode": "00000",
+								"backOfficeCode": "TOP1054",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Europa",
+									"en": "Azioni Europa"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "TOP1029385",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 981.8369,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 5405.66808529381
+						},
+						"mifidInfos": {
+							"isr": 7.513,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 1000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 12.19,
+						"positionPercentage": 0.05372278065814108,
+						"rowId": "AssetPositionKey:696316-00000-TOP1029385-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 2.49,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "FR0010332759",
+							"shortDescription": "BNP paribas actions croi",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNP paribas actions croissance isr",
+								"subAccountCode": "00000",
+								"backOfficeCode": "REV1054",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Europa",
+									"en": "Azioni Europa"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "REV1IbridaLib",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 2469.6469,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 8136.391011132306
+						},
+						"mifidInfos": {
+							"isr": 7.513,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 2500.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 12.19,
+						"positionPercentage": 0.1343069516453527,
+						"rowId": "AssetPositionKey:696300-00000-REV1IbridaLib-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 1.0,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0823401574",
+							"shortDescription": "BNP paribas funds euro e",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNP paribas funds euro equity",
+								"subAccountCode": "00000",
+								"backOfficeCode": "PMUA360",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Europa",
+									"en": "Azioni Europa"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "PMUA0126657",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 189.45,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 42100.0
+						},
+						"mifidInfos": {
+							"isr": 10.3494,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 189.9,
+							"currency": "EUR"
+						},
+						"positionQuantity": 0.45,
+						"positionPercentage": 0.01020195604698099,
+						"rowId": "AssetPositionKey:675259-00000-PMUA0126657-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 139.21,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0507265923",
+							"shortDescription": "Dws invest top dividend",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Dws invest top dividend",
+								"subAccountCode": "00001",
+								"backOfficeCode": "PMUA333",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Globali",
+									"en": "Azioni Globali"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "PMUA0174880",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.00041,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.000006419474528776867
+						},
+						"mifidInfos": {
+							"isr": 6.6926,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "3 - 5 anni",
+								"en": "3 - 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 6386.816,
+							"currency": "EUR"
+						},
+						"positionQuantity": 45.879,
+						"positionPercentage": 0.34311751507190599,
+						"rowId": "AssetPositionKey:671137-00001-PMUA0174880-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 2.0,
+							"currency": "EUR"
+						},
+						"lastPrice": {
+							"price": {
+								"value": 24.70538,
+								"currency": "EUR"
+							},
+							"date": "2014-01-31T00:00:00"
+						},
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "IT0004712375",
+							"shortDescription": "Ferragamo spa",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Ferragamo spa",
+								"subAccountCode": "00001",
+								"backOfficeCode": "00003059400",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Italia",
+									"en": "Azioni Italia"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 399200.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 49900.0
+						},
+						"mifidInfos": {
+							"isr": 15.5834,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 400000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 400.0,
+						"positionPercentage": 21.48911226325643,
+						"rowId": "AssetPositionKey:80614-00001-00004611654654-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 64.161604,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "JP3027650005",
+							"shortDescription": "Nomura etf nikkei225",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Nomura etf-nikkei 225 exc",
+								"subAccountCode": "00001",
+								"backOfficeCode": "00000374180",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Giappone",
+									"en": "Azioni Giappone"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.004681743579054535,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0000072968
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 64161.604,
+							"currency": "EUR"
+						},
+						"positionQuantity": 1000.0,
+						"positionPercentage": 3.4469397783665074,
+						"rowId": "AssetPositionKey:87210-00001--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 18.695,
+							"currency": "EUR"
+						},
+						"lastPrice": {
+							"price": {
+								"value": 25.515,
+								"currency": "EUR"
+							},
+							"date": "2014-01-29T00:00:00"
+						},
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "NL0000009538",
+							"shortDescription": "Philips electrnics",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Philips electronics nv",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000358850",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Europa",
+									"en": "Azioni Europa"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 10.6252,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 74780.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 4000.0,
+						"positionPercentage": 4.01738953761579,
+						"rowId": "AssetPositionKey:69429-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 1.1425,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "GB0034380518",
+							"shortDescription": "Titan europe plc ",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Titan europe plc ",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00003040330",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Europa ex EMU",
+									"en": "Azioni Europa ex EMU"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 6855.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 6000.0,
+						"positionPercentage": 0.3682696614115571,
+						"rowId": "AssetPositionKey:78738-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 3.019,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "NL0000009066",
+							"shortDescription": "Tnt nv *n.u.*",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Tnt nv *n.u.*",
+								"subAccountCode": "00000",
+								"backOfficeCode": "S70500602",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Europa",
+									"en": "Azioni Europa"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {},
+							"ic": "",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 30190.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 10000.0,
+						"positionPercentage": 1.6218907480692793,
+						"rowId": "AssetPositionKey:86939-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 88.75,
+							"currency": "EUR"
+						},
+						"lastPrice": {
+							"price": {
+								"value": 112.161204,
+								"currency": "EUR"
+							},
+							"date": "2014-01-31T00:00:00"
+						},
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "IT0003007728",
+							"shortDescription": "Tod's spa",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Tod's spa",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000361140",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Italia",
+									"en": "Azioni Italia"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 14.6631,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 17750.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 200.0,
+						"positionPercentage": 0.9535793566820041,
+						"rowId": "AssetPositionKey:69634-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 1,
+						"averagePaidPrice": {
+							"value": 16.47956,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "JP3613000003",
+							"shortDescription": "Toyo suisan ",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Toyo suisan ",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000582020",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Azioni Giappone",
+									"en": "Azioni Giappone"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "EQT",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -234765091.2206159,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -99.99298089711846
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 16479.56,
+							"currency": "EUR"
+						},
+						"positionQuantity": 1000.0,
+						"positionPercentage": 0.8853277872226754,
+						"rowId": "AssetPositionKey:72512-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 2,
+						"averagePaidPrice": {
+							"value": 139.58,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0291343597",
+							"shortDescription": "Schroder isf us dollar b",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Schroder isf us dollar bond",
+								"subAccountCode": "00000",
+								"backOfficeCode": "PMUA310",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Bond Corporate Inv Grade Internazionale",
+									"en": "Bond Corporate Inv Grade Internazionale"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "BND",
+						"assetContractCode": "PMUA0126657",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -0.00002,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -8.086630389341898e-7
+						},
+						"mifidInfos": {
+							"isr": 2.8005,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 2473.218,
+							"currency": "EUR"
+						},
+						"positionQuantity": 17.719,
+						"positionPercentage": 0.13286814813376636,
+						"rowId": "AssetPositionKey:595132-00000-PMUA0126657-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 576.49,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0823401814",
+							"shortDescription": "BNP paribas funds euro e",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNP paribas funds euro equity",
+								"subAccountCode": "00000",
+								"backOfficeCode": "YOU2698",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "YOU20000125",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -82148.2631,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -80.42061666734303
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 20000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 177.19,
+						"positionPercentage": 1.0744556131628216,
+						"rowId": "AssetPositionKey:712292-00000-YOU20000125-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 576.49,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU1022395633",
+							"shortDescription": "BNP paribas funds euro h",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNP paribas funds euro high yield s",
+								"subAccountCode": "00000",
+								"backOfficeCode": "YOU2670",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "YOU20000125",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -97148.2631,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -95.10515416683576
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "1 - 3 anni",
+								"en": "1 - 3 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 5000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 177.19,
+						"positionPercentage": 0.2686139032907054,
+						"rowId": "AssetPositionKey:712285-00000-YOU20000125-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 1.5,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0167237543",
+							"shortDescription": "BNP paribas insticash eu",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNP paribas insticash eur 1d short term vnav",
+								"subAccountCode": "00000",
+								"backOfficeCode": "REV1207",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "REV1_LibDiIbriLib",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 1481.715,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 8103.445447087777
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 1500.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 12.19,
+						"positionPercentage": 0.08058417098721162,
+						"rowId": "AssetPositionKey:698418-00000-REV1_LibDiIbriLib-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 576.49,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0599947271",
+							"shortDescription": "Dws concept kaldemorgen",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Dws concept kaldemorgen",
+								"subAccountCode": "00001",
+								"backOfficeCode": "PMUA669",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "PMUA0174880",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -0.06504,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -0.00000636722983357052
+						},
+						"mifidInfos": {
+							"isr": 4.123,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "3 - 5 anni",
+								"en": "3 - 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 1021480.26,
+							"currency": "EUR"
+						},
+						"positionQuantity": 1771.896,
+						"positionPercentage": 54.87675995460092,
+						"rowId": "AssetPositionKey:704847-00001-PMUA0174880-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 576.49,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": null,
+							"shortDescription": "Fidelity em mkt local curr",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Fidelity em mkt local currency debt",
+								"subAccountCode": "00000",
+								"backOfficeCode": "S00215285",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -5754900.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -99.82653645336433
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "3 - 5 anni",
+								"en": "3 - 5 years"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 10000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 10000.0,
+						"positionPercentage": 0.5372278065814108,
+						"rowId": "AssetPositionKey:708279-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 1.0,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0034265644",
+							"shortDescription": "Mor sta europ bond",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Morgan stanley europ bond",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000327250",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -59940000.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -99.9
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "03",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 60000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 1000.0,
+						"positionPercentage": 3.2233668394884646,
+						"rowId": "AssetPositionKey:87142-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 3.0,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0839535514",
+							"shortDescription": "Omw1-amundifdsbdglobalag",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Omw1-amundifdsbdglobalaggregateie-c",
+								"subAccountCode": "00000",
+								"backOfficeCode": "OMW11AG4022",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "OMW1234",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 0.6,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 900.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 300.0,
+						"positionPercentage": 0.04835050259232697,
+						"rowId": "AssetPositionKey:703013-00000-OMW1234-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 2.0,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "LU0568615305",
+							"shortDescription": "Omw1-amundifdsconvertibl",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Omw1-amundifdsconvertibleeuropese-c",
+								"subAccountCode": "00000",
+								"backOfficeCode": "OMW11AG4021",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "OMW1234",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 0.6,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "3 - 5 anni",
+								"en": "3 - 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 1000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 500.0,
+						"positionPercentage": 0.05372278065814108,
+						"rowId": "AssetPositionKey:703012-00000-OMW1234-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 3,
+						"averagePaidPrice": {
+							"value": 580.82,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": null,
+							"shortDescription": "Ubs money mar fund e ",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Ubs money market fund ecu ",
+								"subAccountCode": "00001",
+								"backOfficeCode": "00000890700",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Other",
+									"en": "Other"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "DIV",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -655.20052,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -13.138379033159325
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 4331.72,
+							"currency": "EUR"
+						},
+						"positionQuantity": 8.586,
+						"positionPercentage": 0.23271204343248287,
+						"rowId": "AssetPositionKey:87530-00001--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 4,
+						"averagePaidPrice": {
+							"value": 1.0,
+							"currency": "EUR"
+						},
+						"lastPrice": {
+							"price": {
+								"value": 4.938,
+								"currency": "EUR"
+							},
+							"date": "2007-03-29T00:00:00"
+						},
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "IT0003020887",
+							"shortDescription": "BNL strategia 90 pt",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNL strategia 90 pt",
+								"subAccountCode": "00000",
+								"backOfficeCode": "00000895360",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Bilanciati/Flessibili",
+									"en": "Bilanciati/Flessibili"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "BAL",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -9990000.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -99.9
+						},
+						"mifidInfos": {
+							"isr": 25.0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "03",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 10000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 1000.0,
+						"positionPercentage": 0.5372278065814108,
+						"rowId": "AssetPositionKey:88066-00000--0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 4,
+						"averagePaidPrice": {
+							"value": 139.58,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "FR0010135103",
+							"shortDescription": "Carmignac patrimoine",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Carmignac patrimoine",
+								"subAccountCode": "00000",
+								"backOfficeCode": "PMUA282",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Bilanciati/Flessibili",
+									"en": "Bilanciati/Flessibili"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "BAL",
+						"assetContractCode": "PMUA0126657",
+						"profitLoss": {
+							"profitLoss": {
+								"value": -0.00002,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": -8.086630389341898e-7
+						},
+						"mifidInfos": {
+							"isr": 6.7537,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "3 - 5 anni",
+								"en": "3 - 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 2473.218,
+							"currency": "EUR"
+						},
+						"positionQuantity": 17.719,
+						"positionPercentage": 0.13286814813376636,
+						"rowId": "AssetPositionKey:595110-00000-PMUA0126657-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 4,
+						"averagePaidPrice": {
+							"value": 1.5,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "FR0013237427",
+							"shortDescription": "Fondo protetto aqua 90",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "Fondo protetto aqua 90",
+								"subAccountCode": "00000",
+								"backOfficeCode": "OPP5060",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Bilanciati/Flessibili",
+									"en": "Bilanciati/Flessibili"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "BAL",
+						"assetContractCode": "IbridaGestita",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 1481.715,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 8103.445447087777
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "> 5 anni",
+								"en": "> 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 1500.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 12.19,
+						"positionPercentage": 0.08058417098721162,
+						"rowId": "AssetPositionKey:702961-00000-IbridaGestita-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 4,
+						"averagePaidPrice": {
+							"value": 18.545,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": "GB00B1VMD022",
+							"shortDescription": "M&g optimal income fund",
+							"externalResource": true,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "M&g optimal income fund",
+								"subAccountCode": "00000",
+								"backOfficeCode": "PMUA350",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Bilanciati/Flessibili",
+									"en": "Bilanciati/Flessibili"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "BAL",
+						"assetContractCode": "PMUA0126657",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.000145,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.000044126751445923329
+						},
+						"mifidInfos": {
+							"isr": 2.6852,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "3 - 5 anni",
+								"en": "3 - 5 years"
+							},
+							"ic": "02",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 328.599,
+							"currency": "EUR"
+						},
+						"positionQuantity": 17.719,
+						"positionPercentage": 0.0176532520014845,
+						"rowId": "AssetPositionKey:675250-00000-PMUA0126657-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 5,
+						"averagePaidPrice": {
+							"value": 1.0,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": null,
+							"shortDescription": "BNL ies cedola dipendenti",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": {
+								"description": "BNL ies cedola dipendenti",
+								"subAccountCode": "00000",
+								"backOfficeCode": "FVUE095",
+								"classPlacement": "",
+								"microAssetClass": {
+									"it": "Liquidità €/Gestione Separata",
+									"en": "Liquidità €/Gestione Separata"
+								},
+								"investmentType": null,
+								"fundSubscription": null
+							},
+							"showWarning": false
+						},
+						"macroAssetClassCode": "CSH",
+						"assetContractCode": "FVUE8273912",
+						"profitLoss": {
+							"profitLoss": {
+								"value": 0.0,
+								"currency": "EUR"
+							},
+							"profitLossPercentage": 0.0
+						},
+						"mifidInfos": {
+							"isr": 0,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 1306.45,
+							"currency": "EUR"
+						},
+						"positionQuantity": 1306.45,
+						"positionPercentage": 0.07018612679082842,
+						"rowId": "AssetPositionKey:652049-00000-FVUE8273912-0020043840900000-_N_-"
+					},
+					{
+						"macroAssetClassPriority": 5,
+						"averagePaidPrice": {
+							"value": 0,
+							"currency": "EUR"
+						},
+						"lastPrice": null,
+						"underlyingPositions": null,
+						"assetInfo": {
+							"isin": null,
+							"shortDescription": "Conto Advisory 1500020576",
+							"externalResource": false,
+							"portfolioConstraintType": null,
+							"otherInfos": null,
+							"showWarning": false
+						},
+						"macroAssetClassCode": "CSH",
+						"assetContractCode": "",
+						"profitLoss": {
+							"profitLoss": null,
+							"profitLossPercentage": null
+						},
+						"mifidInfos": {
+							"isr": 0.5,
+							"isCompliant": true,
+							"investmentTimeHorizon": {
+								"it": "Fino a 1 anno",
+								"en": "Less then 1 year"
+							},
+							"ic": "01",
+							"abilityToBearLosses": {
+								"it": "Bassa",
+								"en": "Bassa"
+							},
+							"investmentTimeHorizonIsCompliant": true,
+							"icIsCompliant": true,
+							"abilityToBearLossesIsCompliant": true
+						},
+						"synteticRiskIndex": null,
+						"positionValue": {
+							"value": 10000.0,
+							"currency": "EUR"
+						},
+						"positionQuantity": 10000.0,
+						"positionPercentage": 0.5372278065814108,
+						"rowId": "CashPositionKey:92-1500020576-"
+					}
+				],
+				"total": 30
+			}
+		},
+		{
+			"type": "initial/portfolio/total/updated",
+			"payload": {
+				"description": {
+					"it": "Totale"
+				},
+				"profitLoss": {
+					"profitLoss": {
+						"value": -310268039.3329314,
+						"currency": "EUR"
+					},
+					"profitLossPercentage": -99.40682717391278
+				},
+				"positionValue": {
+					"value": 1861407.745,
+					"currency": "EUR"
+				},
+				"positionPercentage": 100.0,
+				"totalISR": 7.265976017034355
+			}
+		},
+		{
+			"type": "workflow/status/updated",
+			"payload": {
+				"currentStep": "ptfAsIs"
+			}
+		},
+		{
+			"type": "client/screen/show",
+			"payload": "/advisory/retail/full/159155/ptfAsIs"
+		}
+	]
+}

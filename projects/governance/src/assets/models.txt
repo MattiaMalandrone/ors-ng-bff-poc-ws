@@ -1,0 +1,39 @@
+Modelli:
+	Policy
+
+		underlyingPositions: [
+		  Policy
+		]
+		policyInfo: PolicyInfo
+		assetContractCode: ""
+		synteticRiskIndex: number
+		mifidInfos: MifidInfos
+		positionPercentage: number
+		positionValue: PositionValue
+		profitLoss: ProfitLoss
+		rowId: ""
+
+		PolicyInfo
+			assetProductCode: ""
+			externalResource: boolean
+			compositePolicyLine: ""
+			otherInfos: {}
+			showWarning: boolean
+			
+		MifidInfos
+			isr: number
+			isCompliant: boolean
+			investmentTimeHorizon: glob
+			ic: ""
+			abilityToBearLosses: {}
+			investmentTimeHorizonIsCompliant: boolean
+			icIsCompliant: boolean
+			abilityToBearLossesIsCompliant: boolean
+			
+		PositionValue 
+			value: number
+			currency: string
+			
+		ProfitLoss
+			profitLoss: { value: number, currency: string }
+			profitLossPercentage: number
