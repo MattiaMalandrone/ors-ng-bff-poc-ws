@@ -1,6 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { Column } from './model';
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatCheckboxChange } from '@angular/material/checkbox';
+import { BehaviorSubject } from 'rxjs';
+import { PageEvent } from '@angular/material/paginator';
+import { MegaGridService } from './mega-grid.service';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'mega-grid',
@@ -15,11 +20,36 @@ export class MegaGridComponent<T> implements OnInit {
   @Input() displayedColumns: string[] = []
   @Input() showCheckboxColumn: boolean = false;
 
+  private mageGridService: MegaGridService = inject(MegaGridService)
+
   selection = new SelectionModel<T>(true, []);
 
   ngOnInit(): void {
     if(this.showCheckboxColumn)
       this.displayedColumns.unshift("select")
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.mageGridService.filterSubject.next(filterValue);
+  }
+
+  changePage(event: PageEvent) {
+    this.mageGridService.pageSubject.next(event);
+  }
+
+  changeSort(event: Sort) {
+    this.mageGridService.sortSubject.next(event);
+  }
+
+  checkAll(event: MatCheckboxChange) {
+    event ? this.toggleAllRows() : null
+    // emit...
+  }
+
+  checkSingle(event: MatCheckboxChange, row: T) {
+    event ? this.selection.toggle(row) : null
+    // emit
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
