@@ -1,13 +1,12 @@
+import { MegaGridService } from './../../../../../ui/src/lib/mega-grid/mega-grid.service';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSort, SortDirection } from '@angular/material/sort';
 import {
   Observable,
   catchError,
+  combineLatest,
   map,
-  merge,
-  of,
-  startWith,
-  switchMap,
+  switchMap
 } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
@@ -62,7 +61,19 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient, private megaGridService: MegaGridService) {}
+
+  data$ = combineLatest([
+    this.megaGridService.pageAction$,
+    this.megaGridService.sortAction$,
+    this.megaGridService.filterAction$,
+  ])
+  .pipe(
+    switchMap(([ pageAction$, sortAction$, filterAction$ ]) => {
+      // so we can pass pagination, sorting and filtering params to http call
+      return this.exampleDatabase!.getRepoIssues();
+    })
+  )
 
   ngAfterViewInit() {
     this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
