@@ -1,107 +1,71 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatSort, SortDirection } from '@angular/material/sort';
-import {
-  Observable,
-  catchError,
-  map,
-  merge,
-  of,
-  startWith,
-  switchMap,
-} from 'rxjs';
+import { EMPTY, catchError, combineLatest, switchMap, tap } from 'rxjs';
 
-import { HttpClient } from '@angular/common/http';
-import { MatPaginator } from '@angular/material/paginator';
+import { Column } from '@lib/ui/mega-grid/types';
+import { ColumnType } from '@lib/enum/column-type';
+import { Component } from '@angular/core';
+import { FakeService } from '../../services/fake.service';
+import { MegaGridService } from 'projects/ui/src/lib/mega-grid/mega-grid.service';
 import { SelectionModel } from '@angular/cdk/collections';
-import { ColumnType } from "@lib/enum/column-type";
-import { Column } from "@lib/ui/mega-grid/types";
+import { SwapiPerson } from '../models/isr.model';
 
 @Component({
   selector: 'app-isr-consulenza-grid',
   templateUrl: './isr-consulenza-grid.component.html',
   styleUrls: ['./isr-consulenza-grid.component.css'],
 })
-export class IsrConsulenzaGridComponent implements AfterViewInit {
-  displayedColumns: string[] = [
-    'created',
-    'state',
-    'number',
-    'title',
-  ];
-  exampleDatabase!: ExampleHttpDatabase | null;
-  data: GithubIssue[] = [];
-  selection = new SelectionModel<GithubIssue>(true, []);
+export class IsrConsulenzaGridComponent {
+  displayedColumns: string[] = ['name', 'gender', 'birth_year', 'height'];
+  data: SwapiPerson[] = [];
+  selection = new SelectionModel<SwapiPerson>(true, []);
 
   columns: Column[] = [
     {
-      name: 'number',
-      type: ColumnType.Number,
-      label: 'No.',
-    },
-    {
-      name: 'title',
-      label: 'Title',
+      name: 'name',
+      label: 'Name',
       type: ColumnType.String,
     },
     {
-      name: 'state',
-      label: 'State',
+      name: 'birth_year',
+      type: ColumnType.String,
+      label: 'Birth Year',
+    },
+
+    {
+      name: 'height',
+      label: 'Height',
       type: ColumnType.String,
     },
     {
-      name: 'created',
-      label: 'Created',
-      type: ColumnType.Date,
+      name: 'gender',
+      label: 'Gender',
+      type: ColumnType.String,
     },
   ];
 
   resultsLength = 0;
   isLoadingResults = true;
-  isRateLimitReached = false
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  projects$ = combineLatest([
+    this.megaGridService.pageAction$,
+    this.megaGridService.sortAction$,
+    this.megaGridService.filterAction$,
+  ]).pipe(
+    tap(() => this.megaGridService.isLoading.next(true)),
+    switchMap(([paging, sort]) => {
+      this.megaGridService.isLoading.next(false);
+      return this.fakeService.projectsResult$(paging, sort);
+    }),
+    catchError((err) => {
+      this.megaGridService.isLoading.next(false);
+      // this.errorMessageSubject.next(err);
+      return EMPTY;
+    })
+  );
 
-  constructor(private _httpClient: HttpClient) {}
-
-  ngAfterViewInit() {
-    this.exampleDatabase = new ExampleHttpDatabase(this._httpClient);
-
-        this.exampleDatabase!.getRepoIssues().pipe(
-            map((data) => {
-              if (data === null) return [];
-              this.resultsLength = data.total_count;
-              return data.items;
-            })
-          ).subscribe((data) => (this.data = data));
-  }
-
-  /** Whether the number of selected elements matches the total number of rows. */
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.data.length;
-    return numSelected === numRows;
-  }
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
-  toggleAllRows() {
-    if (this.isAllSelected()) {
-      this.selection.clear();
-      return;
-    }
-
-    this.selection.select(...this.data);
-  }
-
-  /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: GithubIssue): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${
-      row.number + 1
-    }`;
-  }
+  constructor(
+    private fakeService: FakeService,
+    private megaGridService: MegaGridService
+  ) {}
 
   publish(): void {}
 
@@ -110,28 +74,4 @@ export class IsrConsulenzaGridComponent implements AfterViewInit {
   view(i: number): void {}
 
   delete(i: number): void {}
-}
-
-export interface GithubApi {
-  items: GithubIssue[];
-  total_count: number;
-}
-
-export interface GithubIssue {
-  created_at: Date;
-  number: string;
-  state: string;
-  title: string;
-}
-
-/** An example database that the data source uses to retrieve data for the table. */
-export class ExampleHttpDatabase {
-  constructor(private _httpClient: HttpClient) {}
-
-  getRepoIssues(): Observable<GithubApi> {
-    const href = 'https://api.github.com/search/issues';
-    const requestUrl = `${href}?q=repo:angular/components&page=1`;
-
-    return this._httpClient.get<GithubApi>(requestUrl);
-  }
 }

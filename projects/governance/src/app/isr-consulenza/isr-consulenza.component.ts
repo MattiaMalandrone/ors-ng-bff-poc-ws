@@ -13,7 +13,7 @@ import { Store } from '@ngrx/store';
   templateUrl: './isr-consulenza.component.html',
   styleUrls: ['./isr-consulenza.component.css'],
 })
-export class IsrConsulenzaComponent implements OnInit {
+export class IsrConsulenzaComponent {
   currentIsr$: Observable<IsrModel | null>;
 
   // We can add the facade pattern to abstract the use of the store
@@ -24,13 +24,13 @@ export class IsrConsulenzaComponent implements OnInit {
     this.currentIsr$ = this.store.select(selectActiveIsr);
   }
 
-  ngOnInit() {
-    this.store.dispatch(
-      IsrConsulenzaGuiActions.init({
-        payload: { lockKey: 'isr_key', pagination: {}, sortable: {} },
-      })
-    );
-  }
+  // ngOnInit() {
+  //   this.store.dispatch(
+  //     IsrConsulenzaGuiActions.init({
+  //       payload: { lockKey: 'isr_key', pagination: {}, sortable: {} },
+  //     })
+  //   );
+  // }
 
   openDialog() {
     this.store.dispatch(
