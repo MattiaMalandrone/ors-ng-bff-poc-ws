@@ -39,31 +39,5 @@ export class IsrConsulenzaComponent {
         message: 'Lorem ipsum',
       })
     );
-    // const dialogRef = this.dialog.open(PublishDialogComponent, {
-    //   data: {},
-    //   hasBackdrop: false,
-    //   width: '250px',
-    // });
-    // const open = dialogRef.afterOpened().pipe(
-    //   map(() =>
-    //     IsrConsulenzaGuiActions.publishDialogOpened({
-    //       message:
-    //         "ACTION di APERTURA che vada ad aggiornare lo store con l'informazione che la dialog è stata APERTA",
-    //     })
-    //   )
-    // );
-    // const close = dialogRef.afterClosed().pipe(
-    //   map(() =>
-    //     IsrConsulenzaGuiActions.publishDialogClosed({
-    //       message:
-    //         "ACTION di CHIUSURA che vada ad aggiornare lo store con l'informazione che la dialog è stata CHIUSA",
-    //     })
-    //   )
-    // );
-    // concat(open, close).subscribe({
-    //   next: (v) => console.log(v),
-    //   error: (e) => console.error(e),
-    //   complete: () => console.info('complete'),
-    // });
   }
 }
