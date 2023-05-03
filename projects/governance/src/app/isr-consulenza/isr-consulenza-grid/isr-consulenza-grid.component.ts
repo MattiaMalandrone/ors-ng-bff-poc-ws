@@ -51,6 +51,8 @@ export class IsrConsulenzaGridComponent {
   resultsLength = 0;
   isLoadingResults = true;
 
+  books$ = this.fakeService.books$();
+
   projects$ = combineLatest([
     this.megaGridService.pageAction$,
     this.megaGridService.sortAction$,

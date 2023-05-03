@@ -7,3 +7,7 @@
     [showCheckboxColumn]="true"
   ></mega-grid>
 </ng-container>
+
+<ng-container *ngIf="books$ | async as books">
+  {{ books | json }}
+</ng-container>
