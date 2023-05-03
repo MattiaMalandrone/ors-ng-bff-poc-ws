@@ -1,7 +1,9 @@
-<mega-grid
-  [data]="data"
-  [columns]="columns"
-  [length]="resultsLength"
-  [displayedColumns]="displayedColumns"
-  [showCheckboxColumn]="true"
-></mega-grid>
+<ng-container *ngIf="projects$ | async as projects">
+  <mega-grid
+    [data]="projects.results"
+    [columns]="columns"
+    [length]="projects.count"
+    [displayedColumns]="displayedColumns"
+    [showCheckboxColumn]="true"
+  ></mega-grid>
+</ng-container>

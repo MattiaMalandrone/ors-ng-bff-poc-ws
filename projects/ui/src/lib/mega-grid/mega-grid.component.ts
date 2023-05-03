@@ -1,54 +1,57 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
-import { Column } from './model';
-import { SelectionModel } from '@angular/cdk/collections';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+
 import { BehaviorSubject } from 'rxjs';
-import { PageEvent } from '@angular/material/paginator';
+import { Column } from './model';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MegaGridService } from './mega-grid.service';
+import { PageEvent } from '@angular/material/paginator';
+import { SelectionModel } from '@angular/cdk/collections';
 import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'mega-grid',
   templateUrl: './mega-grid.component.html',
-  styleUrls: ['./mega-grid.component.css']
+  styleUrls: ['./mega-grid.component.css'],
 })
-export class MegaGridComponent<T> implements OnInit {
-
-  @Input() columns: Column[] = []
-  @Input() data: T[] = []
+export class MegaGridComponent<T> implements OnInit, OnDestroy {
+  @Input() columns: Column[] = [];
+  @Input() data: T[] = [];
   @Input() length: number = 0;
-  @Input() displayedColumns: string[] = []
+  @Input() displayedColumns: string[] = [];
   @Input() showCheckboxColumn: boolean = false;
 
-  private mageGridService: MegaGridService = inject(MegaGridService)
+  private megaGridService: MegaGridService = inject(MegaGridService);
+
+  isLoading$ = this.megaGridService.isLoading$;
 
   selection = new SelectionModel<T>(true, []);
 
   ngOnInit(): void {
-    if(this.showCheckboxColumn)
-      this.displayedColumns.unshift("select")
+    if (this.showCheckboxColumn) this.displayedColumns.unshift('select');
   }
+
+  ngOnDestroy(): void {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.mageGridService.filterSubject.next(filterValue);
+    this.megaGridService.filterSubject.next(filterValue);
   }
 
   changePage(event: PageEvent) {
-    this.mageGridService.pageSubject.next(event);
+    this.megaGridService.pageSubject.next(event);
   }
 
   changeSort(event: Sort) {
-    this.mageGridService.sortSubject.next(event);
+    this.megaGridService.sortSubject.next(event);
   }
 
   checkAll(event: MatCheckboxChange) {
-    event ? this.toggleAllRows() : null
+    event ? this.toggleAllRows() : null;
     // emit...
   }
 
   checkSingle(event: MatCheckboxChange, row: T) {
-    event ? this.selection.toggle(row) : null
+    event ? this.selection.toggle(row) : null;
     // emit
   }
 
@@ -70,8 +73,7 @@ export class MegaGridComponent<T> implements OnInit {
 
   /** The label for the checkbox on the passed row */
   checkboxLabel(row?: T): string {
-    if (!row)
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    if (!row) return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row`;
   }
 }
