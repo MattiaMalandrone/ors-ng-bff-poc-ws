@@ -1,6 +1,5 @@
 import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 
-import { BehaviorSubject } from 'rxjs';
 import { Column } from './model';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MegaGridService } from './mega-grid.service';
