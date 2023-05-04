@@ -12,10 +12,10 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
 
+import { MegaGridService } from '@lib/ui';
 import { PageEvent } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 import { SwapiApi } from '../isr-consulenza/models/isr.model';
-import { MegaGridService } from '@lib/ui';
 
 @Injectable({
   providedIn: 'root',
@@ -48,11 +48,18 @@ export class FakeService {
   /**
    * MORE DECLARATIVE
    */
-  projectsResult2$ = this.http.get<SwapiApi>('https://swapi.dev/api/people', {
-    params: new HttpParams()
-      .set('sortOrder', this.megaGridService.sortSubject.value.direction)
-      .set('offset', this.megaGridService.pageSubject.value.pageIndex.toString())
-      .set('limit', this.megaGridService.pageSubject.value.pageSize.toString()),
+  projectsResult2$ = this.http
+    .get<SwapiApi>('https://swapi.dev/api/people', {
+      params: new HttpParams()
+        .set('sortOrder', this.megaGridService.sortSubject.value.direction)
+        .set(
+          'offset',
+          this.megaGridService.pageSubject.value.pageIndex.toString()
+        )
+        .set(
+          'limit',
+          this.megaGridService.pageSubject.value.pageSize.toString()
+        ),
     })
     .pipe(
       map((projectResult) => {
@@ -71,10 +78,15 @@ export class FakeService {
   // };
 
   books$ = () => {
-    const topUserPostsRef = query(ref(this.database, 'books'), orderByChild('Autore'));
+    const topUserPostsRef = query(
+      ref(this.database, 'books'),
+      orderByChild('Autore')
+    );
     return objectVal(topUserPostsRef);
   };
 
-  constructor(private http: HttpClient, private megaGridService: MegaGridService) {
-  }
+  constructor(
+    private http: HttpClient,
+    private megaGridService: MegaGridService
+  ) {}
 }
