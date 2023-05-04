@@ -1,13 +1,25 @@
+import {
+  Database,
+  limitToLast,
+  list,
+  listVal,
+  objectVal,
+  orderByChild,
+  query,
+  ref,
+} from '@angular/fire/database';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, map, of } from 'rxjs';
-import { Database, list, listVal, objectVal, orderByChild, query, ref } from '@angular/fire/database';
-import { traceUntilFirst } from '@angular/fire/performance';
-
 import { Injectable, inject } from '@angular/core';
+import { Observable, map, of } from 'rxjs';
+
 import { PageEvent } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 import { SwapiApi } from '../isr-consulenza/models/isr.model';
+<<<<<<< Updated upstream
 import { MegaGridService } from '@lib/ui';
+=======
+import { traceUntilFirst } from '@angular/fire/performance';
+>>>>>>> Stashed changes
 
 @Injectable({
   providedIn: 'root',
@@ -63,10 +75,22 @@ export class FakeService {
   // };
 
   books$ = () => {
+<<<<<<< Updated upstream
     const topUserPostsRef = query(ref(this.database, 'books'), orderByChild('Autore'));
     return objectVal(topUserPostsRef);
   };
 
   constructor(private http: HttpClient, private megaGridService: MegaGridService) {
   }
+=======
+    const topUserPostsRef = query(
+      ref(this.database, 'Catalogo'),
+      // orderByChild('Autore'),
+      limitToLast(50)
+    );
+    return objectVal(topUserPostsRef);
+  };
+
+  constructor(private http: HttpClient) {}
+>>>>>>> Stashed changes
 }
