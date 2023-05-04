@@ -59,10 +59,21 @@ export class IsrConsulenzaGridComponent {
     this.megaGridService.filterAction$,
   ]).pipe(
     tap(() => this.megaGridService.isLoading.next(true)),
-    switchMap(([paging, sort]) => {
+    switchMap(([paging, sort]) => this.fakeService.projectsResult$(paging, sort)),
+    catchError((err) => {
       this.megaGridService.isLoading.next(false);
-      return this.fakeService.projectsResult$(paging, sort);
-    }),
+      // this.errorMessageSubject.next(err);
+      return EMPTY;
+    })
+  );
+
+  projects2$ = combineLatest([
+    this.megaGridService.pageAction$,
+    this.megaGridService.sortAction$,
+    this.megaGridService.filterAction$,
+  ]).pipe(
+    tap(() => this.megaGridService.isLoading.next(true)),
+    switchMap(() => this.fakeService.projectsResult2$),
     catchError((err) => {
       this.megaGridService.isLoading.next(false);
       // this.errorMessageSubject.next(err);
