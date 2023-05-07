@@ -1,13 +1,10 @@
-<ng-container *ngIf="projects2$ | async as projects">
+<ng-container *ngIf="books$ | async as books">
   <mega-grid
-    [data]="projects.results"
+    [data]="books"
     [columns]="columns"
-    [length]="projects.count"
+    [length]="totalBooks$ | async"
     [displayedColumns]="displayedColumns"
     [showCheckboxColumn]="true"
   ></mega-grid>
 </ng-container>
 
-<ng-container *ngIf="books$ | async as books">
-  {{ books | json }}
-</ng-container>

@@ -6,6 +6,7 @@ import { MegaGridService } from './mega-grid.service';
 import { PageEvent } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Sort } from '@angular/material/sort';
+import { map, share } from 'rxjs';
 
 @Component({
   selector: 'mega-grid',
@@ -15,13 +16,15 @@ import { Sort } from '@angular/material/sort';
 export class MegaGridComponent<T> implements OnInit, OnDestroy {
   @Input() columns: Column[] = [];
   @Input() data: T[] = [];
-  @Input() length: number = 0;
+  @Input() length: number | null = 0;
   @Input() displayedColumns: string[] = [];
   @Input() showCheckboxColumn: boolean = false;
 
   private megaGridService: MegaGridService = inject(MegaGridService);
 
   isLoading$ = this.megaGridService.isLoading$;
+
+  pageIndex$ = this.megaGridService.pageAction$.pipe(map((page: PageEvent) => page.pageIndex))
 
   selection = new SelectionModel<T>(true, []);
 
@@ -38,9 +41,12 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
 
   changePage(event: PageEvent) {
     this.megaGridService.pageSubject.next(event);
+    const currentSort = this.megaGridService.sortSubject.getValue();
+    this.megaGridService.sortSubject.next(currentSort);
   }
 
   changeSort(event: Sort) {
+    this.megaGridService.pageSubject.next({ pageIndex: 0, pageSize: 10, length: 0 });
     this.megaGridService.sortSubject.next(event);
   }
 

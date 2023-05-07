@@ -39,7 +39,7 @@
     </ng-container>
 
     <ng-container *ngFor="let column of columns" [matColumnDef]="column.name">
-      <th mat-header-cell *matHeaderCellDef>{{ column.label }}</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.label }}</th>
       <td mat-cell *matCellDef="let row">
         <column [type]="column.type" [col]="row[column.name]"></column>
       </td>
@@ -73,6 +73,7 @@
 <mat-paginator
   [length]="length"
   [pageSize]="10"
+  [pageIndex]="pageIndex$ | async"
   aria-label="Select page"
   (page)="changePage($event)"
 ></mat-paginator>

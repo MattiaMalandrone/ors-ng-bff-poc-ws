@@ -1,5 +1,7 @@
 import {
   Database,
+  QueryConstraint,
+  limitToFirst,
   limitToLast,
   list,
   listVal,
@@ -7,15 +9,18 @@ import {
   orderByChild,
   query,
   ref,
+  get,
+  startAt,
+  endAt,
 } from '@angular/fire/database';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, map, of } from 'rxjs';
+import { EMPTY, Observable, catchError, combineLatest, from, map, of, switchMap, tap } from 'rxjs';
 
 import { MegaGridService } from '@lib/ui';
 import { PageEvent } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
-import { SwapiApi } from '../isr-consulenza/models/isr.model';
+import { Book, SwapiApi } from '../isr-consulenza/models/isr.model';
 
 @Injectable({
   providedIn: 'root',
@@ -52,14 +57,8 @@ export class FakeService {
     .get<SwapiApi>('https://swapi.dev/api/people', {
       params: new HttpParams()
         .set('sortOrder', this.megaGridService.sortSubject.value.direction)
-        .set(
-          'offset',
-          this.megaGridService.pageSubject.value.pageIndex.toString()
-        )
-        .set(
-          'limit',
-          this.megaGridService.pageSubject.value.pageSize.toString()
-        ),
+        .set('offset', this.megaGridService.pageSubject.value.pageIndex.toString())
+        .set('limit', this.megaGridService.pageSubject.value.pageSize.toString()),
     })
     .pipe(
       map((projectResult) => {
@@ -71,19 +70,33 @@ export class FakeService {
       })
     );
 
-  // books$ = (paging: PageEvent, sort: Sort, filter: string) => {
-  //   const topUserPostsRef = query(ref(this.database, 'books'), orderByChild('starCount'));
-  //   // return objectVal(ref(this.database, "books"))
-  //   return objectVal(topUserPostsRef);
-  // };
+  projects$ = combineLatest([
+    this.megaGridService.pageAction$,
+    this.megaGridService.sortAction$,
+    this.megaGridService.filterAction$,
+  ]).pipe(
+    tap(() => this.megaGridService.isLoading.next(true)),
+    switchMap(([ page, sort, filter ]) => this.projectsResult$(page, sort)),
+    catchError((err) => {
+      this.megaGridService.isLoading.next(false);
+      // this.errorMessageSubject.next(err);
+      return EMPTY;
+    })
+  );
 
-  books$ = () => {
-    const topUserPostsRef = query(
-      ref(this.database, 'books'),
-      orderByChild('Autore')
-    );
-    return objectVal(topUserPostsRef);
-  };
+  projects2$ = combineLatest([
+    this.megaGridService.pageAction$,
+    this.megaGridService.sortAction$,
+    this.megaGridService.filterAction$,
+  ]).pipe(
+    tap(() => this.megaGridService.isLoading.next(true)),
+    switchMap(() => this.projectsResult2$),
+    catchError((err) => {
+      this.megaGridService.isLoading.next(false);
+      // this.errorMessageSubject.next(err);
+      return EMPTY;
+    })
+  );
 
   constructor(
     private http: HttpClient,

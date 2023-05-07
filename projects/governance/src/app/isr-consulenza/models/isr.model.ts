@@ -17,3 +17,9 @@ export interface SwapiPerson {
   height: string;
   gender: string;
 }
+
+export interface Book {
+  Numero: number
+  Title: string
+  Autore: string
+}

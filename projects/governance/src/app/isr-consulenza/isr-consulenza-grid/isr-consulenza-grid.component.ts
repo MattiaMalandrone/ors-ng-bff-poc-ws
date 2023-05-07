@@ -1,91 +1,46 @@
-import {
-  EMPTY,
-  catchError,
-  combineLatest,
-  switchMap,
-  tap
-} from 'rxjs';
-
 import { Column } from '@lib/ui/mega-grid/types';
 import { ColumnType } from '@lib/enum/column-type';
-import { Component } from '@angular/core';
-import { FakeService } from '../../services/fake.service';
-import { MegaGridService } from '@lib/ui';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
-import { SwapiPerson } from '../models/isr.model';
+import { Book } from '../models/isr.model';
+import { BooksService } from '../../services/books.service';
 
 @Component({
   selector: 'app-isr-consulenza-grid',
   templateUrl: './isr-consulenza-grid.component.html',
   styleUrls: ['./isr-consulenza-grid.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IsrConsulenzaGridComponent {
-  displayedColumns: string[] = ['name', 'gender', 'birth_year', 'height'];
-  data: SwapiPerson[] = [];
-  selection = new SelectionModel<SwapiPerson>(true, []);
+
+  displayedColumns: string[] = ['Numero', 'Title', 'Autore'];
+  data: Book[] = [];
+  selection = new SelectionModel<Book>(true, []);
 
   columns: Column[] = [
     {
-      name: 'name',
-      label: 'Name',
-      type: ColumnType.String,
+      name: 'Numero',
+      label: 'Nr.',
+      type: ColumnType.Number,
     },
     {
-      name: 'birth_year',
+      name: 'Title',
       type: ColumnType.String,
-      label: 'Birth Year',
-    },
-
-    {
-      name: 'height',
-      label: 'Height',
-      type: ColumnType.String,
+      label: 'Titolo',
     },
     {
-      name: 'gender',
-      label: 'Gender',
+      name: 'Autore',
+      label: 'Autore',
       type: ColumnType.String,
-    },
+    }
   ];
 
-  resultsLength = 0;
-  isLoadingResults = true;
+  totalBooks$ = this.booksService.totalBooks$;
+  books$ = this.booksService.books$;
 
-  books$ = this.fakeService.books$();
+  constructor(private booksService: BooksService) {
 
-  projects$ = combineLatest([
-    this.megaGridService.pageAction$,
-    this.megaGridService.sortAction$,
-    this.megaGridService.filterAction$,
-  ]).pipe(
-    tap(() => this.megaGridService.isLoading.next(true)),
-    switchMap(([paging, sort]) => this.fakeService.projectsResult$(paging, sort)),
-    catchError((err) => {
-      this.megaGridService.isLoading.next(false);
-      // this.errorMessageSubject.next(err);
-      return EMPTY;
-    })
-  );
-
-  projects2$ = combineLatest([
-    this.megaGridService.pageAction$,
-    this.megaGridService.sortAction$,
-    this.megaGridService.filterAction$,
-  ]).pipe(
-    tap(() => this.megaGridService.isLoading.next(true)),
-    switchMap(() => this.fakeService.projectsResult2$),
-    catchError((err) => {
-      this.megaGridService.isLoading.next(false);
-      // this.errorMessageSubject.next(err);
-      return EMPTY;
-    })
-  );
-
-
-  constructor(
-    private fakeService: FakeService,
-    private megaGridService: MegaGridService
-  ) {}
+  }
 
   publish(): void {}
 
