@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { DataSnapshot, Database, QueryConstraint, get, limitToFirst, objectVal, orderByChild, query, ref, startAt,  } from '@angular/fire/database';
+import { Database, QueryConstraint, get, limitToFirst, objectVal, orderByChild, query, ref, startAt,  } from '@angular/fire/database';
 import { MegaGridService } from '@lib/ui';
 import { ActionsGrid } from 'projects/ui/src/lib/mega-grid/model/actions-grid';
-import { combineLatest, distinctUntilChanged, from, map, shareReplay, switchMap } from 'rxjs';
+import { delay, from, map, switchMap, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,10 @@ export class BooksService {
                 .pipe(map((snapshot) => snapshot.size))
 
   books$ = this.megaGridService.actions$.pipe(
+    tap(() => this.megaGridService.isLoading.next(true)),
+    delay(5000),
     switchMap((actionsGrid: ActionsGrid) => {
-      console.log(actionsGrid);
+      console.dir(actionsGrid);
       const queryConstraints: QueryConstraint[] = [];
 
       queryConstraints.push(orderByChild(actionsGrid.sort.active || "Numero"));
@@ -23,7 +25,10 @@ export class BooksService {
       queryConstraints.push(limitToFirst(actionsGrid.page.pageSize));
 
       return objectVal<{}>(query(ref(this.database, 'Catalogo'), ...queryConstraints))
-      .pipe(map(result => Object.values(result)));
+              .pipe(
+                map(result => Object.values(result)),
+                tap(() => this.megaGridService.isLoading.next(false))
+              );
     })
   )
 
