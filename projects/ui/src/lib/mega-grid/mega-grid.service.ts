@@ -11,19 +11,6 @@ export class MegaGridService {
   isLoading = new BehaviorSubject<boolean>(false);
   isLoading$ = this.isLoading.asObservable();
 
-  // pageSubject = new BehaviorSubject<PageEvent>({
-  //   pageSize: 10,
-  //   pageIndex: 0,
-  //   length: 0,
-  // });
-  // pageAction$ = this.pageSubject.asObservable();
-
-  // sortSubject = new BehaviorSubject<Sort>({ active: '', direction: '' });
-  // sortAction$ = this.sortSubject.asObservable();
-
-  // filterSubject = new BehaviorSubject<string>('');
-  // filterAction$ = this.filterSubject.asObservable();
-
   actionsSubject = new BehaviorSubject<ActionsGrid>({
     page: {
       pageSize: 10,
@@ -31,7 +18,8 @@ export class MegaGridService {
       length: 0,
     },
     sort: {
-      active: '', direction: ''
+      active: '',
+      direction: ''
     },
     filter: ""
   })

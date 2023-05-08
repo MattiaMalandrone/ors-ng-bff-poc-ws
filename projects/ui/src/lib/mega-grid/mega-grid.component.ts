@@ -41,20 +41,15 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
   }
 
   changePage(event: PageEvent) {
-    // this.mgSvc.actionsSubject.next(event);
     this.mgSvc.actionsSubject.next({ ...this.mgSvc.actionsSubject.value, page: event });
   }
 
   changeSort(event: Sort) {
     // Changing sort state implifies the returns to the first page for convenience
-    // this.mgSvc.actionsSubject.next(event);
-    // this.mgSvc.actionsSubject.next({ pageIndex: 0, pageSize: 10, length: 0 });
     this.mgSvc.actionsSubject.next({
       ...this.mgSvc.actionsSubject.value,
       sort: event,
-      page: {
-        pageIndex: 0, pageSize: 10, length: 0
-      }
+      page: { pageIndex: 0, pageSize: 10, length: 0 }
     });
 
   }

@@ -1,6 +1,6 @@
 import { Column } from '@lib/ui/mega-grid/types';
 import { ColumnType } from '@lib/enum/column-type';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Book } from '../models/isr.model';
 import { BooksService } from '../../services/books.service';
@@ -12,6 +12,8 @@ import { BooksService } from '../../services/books.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IsrConsulenzaGridComponent {
+
+  private booksService = inject(BooksService);
 
   displayedColumns: string[] = ['Numero', 'Title', 'Autore'];
   data: Book[] = [];
@@ -37,10 +39,6 @@ export class IsrConsulenzaGridComponent {
 
   totalBooks$ = this.booksService.totalBooks$;
   books$ = this.booksService.books$;
-
-  constructor(private booksService: BooksService) {
-
-  }
 
   publish(): void {}
 
