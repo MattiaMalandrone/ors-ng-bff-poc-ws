@@ -1,7 +1,5 @@
-import { BehaviorSubject, combineLatest, map, share } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
-import { Sort } from '@angular/material/sort';
 import { ActionsGrid } from './model/actions-grid';
 
 @Injectable({
@@ -24,7 +22,5 @@ export class MegaGridService {
     filter: ""
   })
 
-  actions$ = this.actionsSubject.asObservable().pipe(share());
-
-  constructor() {}
+  actions$ = this.actionsSubject.asObservable();
 }
