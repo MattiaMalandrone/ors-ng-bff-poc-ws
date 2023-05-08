@@ -6,7 +6,8 @@ import { MegaGridService } from './mega-grid.service';
 import { PageEvent } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Sort } from '@angular/material/sort';
-import { map, share } from 'rxjs';
+import { distinctUntilChanged, map, merge, share, withLatestFrom } from 'rxjs';
+import { ActionsGrid } from './model/actions-grid';
 
 @Component({
   selector: 'mega-grid',
@@ -20,11 +21,11 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
   @Input() displayedColumns: string[] = [];
   @Input() showCheckboxColumn: boolean = false;
 
-  private megaGridService: MegaGridService = inject(MegaGridService);
+  private mgSvc: MegaGridService = inject(MegaGridService);
 
-  isLoading$ = this.megaGridService.isLoading$;
+  isLoading$ = this.mgSvc.isLoading$;
 
-  pageIndex$ = this.megaGridService.pageAction$.pipe(map((page: PageEvent) => page.pageIndex))
+  pageIndex$ = this.mgSvc.actions$.pipe(map((actionsGrid: ActionsGrid) => actionsGrid.page.pageIndex))
 
   selection = new SelectionModel<T>(true, []);
 
@@ -36,18 +37,26 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.megaGridService.filterSubject.next(filterValue);
+    this.mgSvc.actionsSubject.next({ ...this.mgSvc.actionsSubject.value, filter: filterValue });
   }
 
   changePage(event: PageEvent) {
-    this.megaGridService.pageSubject.next(event);
-    const currentSort = this.megaGridService.sortSubject.getValue();
-    this.megaGridService.sortSubject.next(currentSort);
+    // this.mgSvc.actionsSubject.next(event);
+    this.mgSvc.actionsSubject.next({ ...this.mgSvc.actionsSubject.value, page: event });
   }
 
   changeSort(event: Sort) {
-    this.megaGridService.pageSubject.next({ pageIndex: 0, pageSize: 10, length: 0 });
-    this.megaGridService.sortSubject.next(event);
+    // Changing sort state implifies the returns to the first page for convenience
+    // this.mgSvc.actionsSubject.next(event);
+    // this.mgSvc.actionsSubject.next({ pageIndex: 0, pageSize: 10, length: 0 });
+    this.mgSvc.actionsSubject.next({
+      ...this.mgSvc.actionsSubject.value,
+      sort: event,
+      page: {
+        pageIndex: 0, pageSize: 10, length: 0
+      }
+    });
+
   }
 
   checkAll(event: MatCheckboxChange) {
