@@ -1,4 +1,5 @@
+import { Observable } from 'rxjs';
 /// InterestCalculationStrategy
 export interface ExecCommandStrategy<T> {
-  exec(payloadRow: T): void
+  exec(payloadRow: T): Observable<void>
 }

@@ -1,12 +1,10 @@
-import { ExecCommandStrategy } from './strategy-pattern-commands/exec-command.strategy';
-import { Column, Command } from '@lib/ui/mega-grid/types';
+import { Observable, map } from 'rxjs';
+import { Column, Command, RowCommand } from '@lib/ui/mega-grid/types';
 import { ColumnType } from '@lib/enum/column-type';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Book } from '../models/isr.model';
 import { BooksService } from '../../services/books.service';
-import { PublishCommand } from './strategy-pattern-commands/strategies/publish.strategy';
-import { EditCommand } from './strategy-pattern-commands/strategies/edit.strategy';
 import { ExecCommandStrategyFactory } from './strategy-pattern-commands/exec-command.factory';
 import { CommandType } from './strategy-pattern-commands/command-types.enum';
 
@@ -24,18 +22,22 @@ export class IsrConsulenzaGridComponent {
   data: Book[] = [];
   selection = new SelectionModel<Book>(true, []);
 
-  commands = [
+  commands: RowCommand[] = [
     {
-      commandType: 'edit'
+      commandType: CommandType.EDIT,
+      icon: "edit"
     },
     {
-      commandType: 'publish'
+      commandType: CommandType.PUBLISH,
+      icon: "publish"
     },
     {
-      commandType: 'view'
+      commandType: CommandType.VIEW,
+      icon: "open_in_new"
     },
     {
-      commandType: 'delete'
+      commandType: CommandType.DELETE,
+      icon: "delete"
     }
   ]
 
@@ -64,9 +66,9 @@ export class IsrConsulenzaGridComponent {
    * Command executed by using
    * Strategy Pattern + Factory Method Pattern
    */
-  execCommand(event: Command<Book>): void {
+  execCommand(event: Command): Observable<void> {
     const commandFactory = new ExecCommandStrategyFactory<Book>();
     const strategy = commandFactory.getCommandStrategy(event.commandType);
-    strategy.exec(event.payloadRow);
+    return strategy.exec(event.payloadRow as Book);
   }
 }

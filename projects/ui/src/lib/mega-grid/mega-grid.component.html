@@ -17,6 +17,18 @@
     matSortDirection="desc"
     (matSortChange)="changeSort($event)"
   >
+    <!-- btn to expand/collapse row -->
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+          <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- checkbox for selection -->
     <ng-container *ngIf="showCheckboxColumn" matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
         <mat-checkbox
@@ -38,6 +50,7 @@
       </td>
     </ng-container>
 
+    <!-- actual columns -->
     <ng-container *ngFor="let column of columns" [matColumnDef]="column.name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.label }}</th>
       <td mat-cell *matCellDef="let row">
@@ -45,14 +58,27 @@
       </td>
     </ng-container>
 
+    <!-- actions -->
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>actions</th>
+      <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let row; let i = index">
         <ng-container *ngFor="let cmd of rowCommands">
           <button mat-icon-button color="accent" (click)="command(cmd.commandType, row)">
-            <mat-icon aria-label="cmd.commandType">{{ cmd.commandType }}</mat-icon>
+            <mat-icon aria-label="cmd.commandType">{{ cmd.icon }}</mat-icon>
           </button>
         </ng-container>
+      </td>
+    </ng-container>
+
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="example-element-detail"
+            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-description">
+            {{element | json}}
+          </div>
+        </div>
       </td>
     </ng-container>
 

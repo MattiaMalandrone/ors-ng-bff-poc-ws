@@ -6,26 +6,36 @@ import { MegaGridService } from './mega-grid.service';
 import { PageEvent } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Sort } from '@angular/material/sort';
-import { distinctUntilChanged, map, merge, share, withLatestFrom } from 'rxjs';
+import { map } from 'rxjs';
 import { ActionsGrid } from './model/actions-grid';
 import { Command } from './model/command.model';
+import { RowCommand } from './model/row-command.model';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'mega-grid',
   templateUrl: './mega-grid.component.html',
   styleUrls: ['./mega-grid.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class MegaGridComponent<T> implements OnInit, OnDestroy {
   @Input() columns: Column[] = [];
   @Input() data: T[] = [];
   @Input() length: number | null = 0;
   @Input() displayedColumns: string[] = [];
+  @Input() expandableRows: boolean = false;
   @Input() showCheckboxColumn: boolean = false;
-  @Input() rowCommands: any[] = []
+  @Input() rowCommands: RowCommand[] = []
 
   @Output() checkAllEvent = new EventEmitter<MatCheckboxChange>();
   @Output() checkSingleEvent = new EventEmitter<MatCheckboxChange>();
-  @Output() commandEvent = new EventEmitter<Command<T>>();
+  @Output() commandEvent = new EventEmitter<Command>();
 
   private mgSvc: MegaGridService = inject(MegaGridService);
 
@@ -35,8 +45,11 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
 
   selection = new SelectionModel<T>(true, []);
 
+  expandedElement!: T | null;
+
   ngOnInit(): void {
     if (this.showCheckboxColumn) this.displayedColumns.unshift('select');
+    if (this.expandableRows) this.displayedColumns.unshift('expand');
   }
 
   ngOnDestroy(): void {}

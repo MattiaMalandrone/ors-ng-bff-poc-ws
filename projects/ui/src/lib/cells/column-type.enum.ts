@@ -3,4 +3,5 @@ export enum ColumnType {
   Number = "number",
   Date = "date",
   Boolean = "boolean",
+  Actions = ""
 }

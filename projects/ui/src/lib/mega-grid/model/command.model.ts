@@ -1,4 +1,4 @@
-export interface Command<T> {
+export interface Command {
   commandType: number,
-  payloadRow: T
+  payloadRow: unknown
 }

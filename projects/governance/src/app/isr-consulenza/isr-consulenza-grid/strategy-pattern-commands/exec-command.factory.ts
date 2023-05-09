@@ -17,8 +17,8 @@ export class ExecCommandStrategyFactory<T> {
     switch (commandType) {
       case CommandType.PUBLISH: return this.publishCommand;
       case CommandType.EDIT: return this.editCommand;
-      case CommandType.VIEW: return this.editCommand;
-      case CommandType.DELETE: return this.editCommand;
+      case CommandType.VIEW: return this.viewCommand;
+      case CommandType.DELETE: return this.deleteCommand;
       default: {
         return this.noCommand;
       }
