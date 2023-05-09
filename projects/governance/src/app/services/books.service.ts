@@ -15,7 +15,7 @@ export class BooksService {
 
   books$ = this.megaGridService.actions$.pipe(
     tap(() => this.megaGridService.isLoading.next(true)),
-    delay(5000),
+    delay(2000),
     switchMap((actionsGrid: ActionsGrid) => {
       console.dir(actionsGrid);
       const queryConstraints: QueryConstraint[] = [];

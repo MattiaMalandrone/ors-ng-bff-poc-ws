@@ -5,6 +5,8 @@
     [length]="totalBooks$ | async"
     [displayedColumns]="displayedColumns"
     [showCheckboxColumn]="true"
+    [rowCommands]="commands"
+    (commandEvent)="execCommand($event)"
   ></mega-grid>
 </ng-container>
 

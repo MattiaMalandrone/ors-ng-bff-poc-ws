@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, inject } from '@angular/core';
 
 import { Column } from './model';
 import { MatCheckboxChange } from '@angular/material/checkbox';
@@ -8,6 +8,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { Sort } from '@angular/material/sort';
 import { distinctUntilChanged, map, merge, share, withLatestFrom } from 'rxjs';
 import { ActionsGrid } from './model/actions-grid';
+import { Command } from './model/command.model';
 
 @Component({
   selector: 'mega-grid',
@@ -20,6 +21,11 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
   @Input() length: number | null = 0;
   @Input() displayedColumns: string[] = [];
   @Input() showCheckboxColumn: boolean = false;
+  @Input() rowCommands: any[] = []
+
+  @Output() checkAllEvent = new EventEmitter<MatCheckboxChange>();
+  @Output() checkSingleEvent = new EventEmitter<MatCheckboxChange>();
+  @Output() commandEvent = new EventEmitter<Command<T>>();
 
   private mgSvc: MegaGridService = inject(MegaGridService);
 
@@ -51,17 +57,16 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
       sort: event,
       page: { pageIndex: 0, pageSize: 10, length: 0 }
     });
-
   }
 
   checkAll(event: MatCheckboxChange) {
     event ? this.toggleAllRows() : null;
-    // emit...
+    this.checkAllEvent.emit(event);
   }
 
   checkSingle(event: MatCheckboxChange, row: T) {
     event ? this.selection.toggle(row) : null;
-    // emit
+    this.checkSingleEvent.emit(event);
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
@@ -72,7 +77,7 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
   }
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
-  toggleAllRows() {
+  private toggleAllRows() {
     if (this.isAllSelected()) {
       this.selection.clear();
       return;
@@ -84,5 +89,9 @@ export class MegaGridComponent<T> implements OnInit, OnDestroy {
   checkboxLabel(row?: T): string {
     if (!row) return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row`;
+  }
+
+  command(commandType: number, payloadRow: T): void {
+    this.commandEvent.emit({ commandType, payloadRow })
   }
 }
