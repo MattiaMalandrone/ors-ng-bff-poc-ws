@@ -25,10 +25,10 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   ],
 })
 export class MegaGridComponent<T> implements OnInit, OnDestroy {
-  @Input() columns: Column[] = [];
-  @Input() data: T[] = [];
-  @Input() length: number | null = 0;
-  @Input() displayedColumns: string[] = [];
+  @Input({ required: true }) columns: Column[] = [];
+  @Input({ required: true }) data: T[] = [];
+  @Input({ required: true }) length: number | null = 0;
+  @Input({ required: true }) displayedColumns: string[] = [];
   @Input() expandableRows: boolean = false;
   @Input() showCheckboxColumn: boolean = false;
   @Input() rowCommands: RowCommand[] = []
