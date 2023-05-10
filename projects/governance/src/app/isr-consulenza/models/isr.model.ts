@@ -22,4 +22,7 @@ export interface Book {
   Numero: number
   Title: string
   Autore: string
+  underlying: {
+    Sinossi: string
+  }
 }
