@@ -15,11 +15,9 @@ import { isrConsulenzaFeature } from './state/isr-consuelnza.state';
   styleUrls: ['./isr-consulenza.component.css'],
 })
 export class IsrConsulenzaComponent {
-  // currentIsr$: Observable<IsrModel | null>;
   lockItem$!: Observable<string>
   lockItemMessageWithOtherText$!: Observable<string>
 
-  // We can add the facade pattern to abstract the use of the store
   constructor(
     private store: Store<IsrConsulenzaState>,
     public dialog: MatDialog
