@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ServerSynchronizerService {
 
-  readonly baseUrl = `${environment.apiUrl}/governance/sync/`;
+  readonly baseUrl = `${environment.apiUrl}/governance/sync`;
 
   constructor(private readonly http: HttpClient,
     private readonly snackBar: MatSnackBar,

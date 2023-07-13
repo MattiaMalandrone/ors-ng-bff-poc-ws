@@ -1,6 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { EffectsModule } from '@ngrx/effects';
+import { PushPipe } from '@ngrx/component';
 import { IsrConsulenzaComponent } from './isr-consulenza.component';
 import { IsrConsulenzaEffects } from './state/effects';
 import { IsrConsulenzaGridComponent } from './isr-consulenza-grid/isr-consulenza-grid.component';
@@ -22,13 +23,14 @@ const routes: Routes = [
   declarations: [
     IsrConsulenzaComponent,
     IsrConsulenzaGridComponent,
-    IsrConsulenzaManagerComponent
+    IsrConsulenzaManagerComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
     StoreModule.forFeature(isrConsulenzaFeature, isrConsulenzaReducer),
     EffectsModule.forFeature([IsrConsulenzaEffects]),
-    SharedModule
+    SharedModule,
+    PushPipe
   ]
 })
 export default class IsrConsulenzaModule { }

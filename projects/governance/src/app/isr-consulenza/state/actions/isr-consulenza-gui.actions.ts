@@ -16,6 +16,11 @@ export const selectIsr = createAction(
   props<{ isrId: number }>()
 );
 
+export const lockItem = createAction(
+  'lockManager/lockItem',
+  props<{ payload: string }>()
+);
+
 export const clearSelectedIsr = createAction(
   '[Isr Consulenza Page] Clear Selected Isr'
 );

@@ -1,5 +1,5 @@
 import { IsrConsulenzaApiActions, IsrConsulenzaGuiActions } from './actions';
-import { createReducer, createSelector, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 
 import { IsrModel } from '../models/isr.model';
 
@@ -17,6 +17,8 @@ export interface IsrConsulenzaState {
   isrDialogVisible: boolean;
   profiles: any[];
   validationError: boolean;
+
+  lockItem: string
 }
 
 export const initialState: IsrConsulenzaState = {
@@ -33,6 +35,8 @@ export const initialState: IsrConsulenzaState = {
   isrDialogVisible: false,
   profiles: [],
   validationError: false,
+
+  lockItem: ""
 };
 
 export const isrConsulenzaReducer = createReducer(
@@ -42,6 +46,13 @@ export const isrConsulenzaReducer = createReducer(
     return {
       ...state,
       activeIsrId: action.isrId,
+    };
+  }),
+  on(IsrConsulenzaGuiActions.lockItem, (state, action) => {
+    console.log(action);
+    return {
+      ...state,
+      lockItem: action.payload,
     };
   }),
   on(IsrConsulenzaApiActions.isrsLoaded, (state, action) => {
@@ -89,15 +100,4 @@ export const isrConsulenzaReducer = createReducer(
   // on(IsrConsulenzaApiActions.isrDeleted, (state, action) => {
   //   return adapter.removeOne(action.isrId, state);
   // })
-);
-
-export const selectAll = (state: IsrConsulenzaState) => state.collection;
-
-export const selectActiveIsrId = (state: IsrConsulenzaState) =>
-  state.activeIsrId;
-
-export const selectActiveIsr = createSelector(
-  selectAll,
-  selectActiveIsrId,
-  (isrs, activeIsrId) => isrs.find((isr) => isr.id === activeIsrId) || null
 );
