@@ -15,15 +15,14 @@ import { isrConsulenzaFeature } from './state/isr-consuelnza.state';
   styleUrls: ['./isr-consulenza.component.css'],
 })
 export class IsrConsulenzaComponent {
-  lockItem$!: Observable<string>
-  lockItemMessageWithOtherText$!: Observable<string>
+  currentIsrId$!: Observable<number | null>
+  showMessage$!: Observable<boolean>
+  messageCustom$!: Observable<string>
 
-  constructor(
-    private store: Store<IsrConsulenzaState>,
-    public dialog: MatDialog
-  ) {
-    this.lockItem$ = this.store.select(isrConsulenzaFeature.selectLockItem);
-    this.lockItemMessageWithOtherText$ = this.store.select(isrConsulenzaFeature.selectMessageWithOtherText);
+  constructor(private store: Store<IsrConsulenzaState>) {
+    this.currentIsrId$ = this.store.select(isrConsulenzaFeature.selectCurrentIsrId);
+    this.showMessage$ = this.store.select(isrConsulenzaFeature.selectShowMessage);
+    this.messageCustom$ = this.store.select(isrConsulenzaFeature.selectSomethingCustom)
   }
 
   ngOnInit() {
@@ -34,12 +33,13 @@ export class IsrConsulenzaComponent {
     );
   }
 
-  openDialog() {
-    this.store.dispatch(
-      IsrConsulenzaGuiActions.openPublishDialog({
-        isr: { id: 1, isPublished: true, name: 'Test' },
-        message: 'Lorem ipsum',
-      })
-    );
-  }
+  // public dialog: MatDialog
+  // openDialog() {
+  //   this.store.dispatch(
+  //     IsrConsulenzaGuiActions.openPublishDialog({
+  //       isr: { id: 1, isPublished: true, name: 'Test' },
+  //       message: 'Lorem ipsum',
+  //     })
+  //   );
+  // }
 }

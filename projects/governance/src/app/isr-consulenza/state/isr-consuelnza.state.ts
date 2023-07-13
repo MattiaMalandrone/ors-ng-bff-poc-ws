@@ -1,92 +1,67 @@
-import * as fromRoot from '../../state/state';
 import { IsrConsulenzaApiActions, IsrConsulenzaGuiActions } from './actions';
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
-import { IsrModel } from '../models/isr.model';
-
-// Extends the app state to include the IsrConsulenzaState feature.
-// This is required because IsrConsulenzaState are lazy loaded.
-// So the reference to IsrConsulenzaState cannot be added to app.state.ts directly.
-export interface State extends fromRoot.AppState {
-  isrConsulenza: IsrConsulenzaState;
-}
 
 export interface IsrConsulenzaState {
-  collection: IsrModel[];
-  activeIsrId: number | null;
-  //---------------------------------
-  gridConfiguration: any;
-  sort: any[];
-  sortable: any;
-  pagination: any;
-  publishCalendarToggle: boolean;
-  name: string;
-  isOnlyView: boolean;
-  isrDialogVisible: boolean;
-  profiles: any[];
-  validationError: boolean;
-
-  lockItem: string
+  currentIsrId: number | null,
+  showMessage: boolean,
+  data: { fieldA: string | null, fieldB: string[], fieldC: number, fieldD: boolean | null }
 }
 
 export const initialState: IsrConsulenzaState = {
-  collection: [],
-  activeIsrId: 0,
-  // --------------------------------------------
-  gridConfiguration: undefined,
-  sort: [],
-  sortable: undefined,
-  pagination: undefined,
-  publishCalendarToggle: false,
-  name: '',
-  isOnlyView: false,
-  isrDialogVisible: false,
-  profiles: [],
-  validationError: false,
-
-  lockItem: ""
+  currentIsrId: null,
+  showMessage: false,
+  data: {
+    fieldA: null,
+    fieldB: [],
+    fieldC: 0,
+    fieldD: null
+  }
 };
 
 const isrConsulenzaReducer = createReducer(
   initialState,
-  on(IsrConsulenzaGuiActions.selectIsr, (state, action) => {
+  on(IsrConsulenzaApiActions.setCurrentIsrId, (state, action) => {
     return {
       ...state,
-      activeIsrId: action.isrId,
+      currentIsrId: action.payload.fieldCurrentId
     };
   }),
-  on(IsrConsulenzaGuiActions.lockItem, (state, action) => {
+  on(IsrConsulenzaApiActions.showMessage, (state, action) => {
     return {
       ...state,
-      lockItem: action.payload,
+      showMessage: action.payload.fieldShow
     };
   }),
-  on(IsrConsulenzaApiActions.isrsLoaded, (state, action) => {
+  on(IsrConsulenzaApiActions.loadData, (state, action) => {
     return {
       ...state,
-      collection: action.isrs.data,
+      data: action.payload
     };
   }),
-  on(IsrConsulenzaGuiActions.publishDialogOpened, (state, action) => {
-    return {
-      ...state,
-      dialogOpened: true
-    };
-  }),
-  on(IsrConsulenzaGuiActions.publishDialogClosed, (state, action) => {
-    return {
-      ...state,
-      dialogOpened: false
-    };
-  })
+
+  // on(IsrConsulenzaGuiActions.publishDialogOpened, (state, action) => {
+  //   return {
+  //     ...state,
+  //     dialogOpened: true
+  //   };
+  // }),
+  // on(IsrConsulenzaGuiActions.publishDialogClosed, (state, action) => {
+  //   return {
+  //     ...state,
+  //     dialogOpened: false
+  //   };
+  // })
 );
 
 export const isrConsulenzaFeature = createFeature({
   name: "isrConsulenzaFeature",
   reducer:  isrConsulenzaReducer,
-  extraSelectors: ({ selectLockItem }) => ({
-    selectMessageWithOtherText: createSelector(
-      selectLockItem,
-      (lockItem) => `:::::::::: ${lockItem} ::::::::`
+  extraSelectors: ({ selectCurrentIsrId, selectShowMessage, selectData }) => ({
+    selectSomethingCustom: createSelector(
+      selectCurrentIsrId,
+      selectShowMessage,
+      selectData,
+      (currentIsrId, showMessage, data) => `currentIsrId: ${currentIsrId} showing? ${showMessage} with message: ${data.fieldA} and a total: ${data.fieldC}`
     )
   })
 })

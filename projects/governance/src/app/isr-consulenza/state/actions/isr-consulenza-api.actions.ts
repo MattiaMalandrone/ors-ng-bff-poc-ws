@@ -1,24 +1,16 @@
 import { createAction, props } from "@ngrx/store";
 
-import { IsrModel } from "../../models/isr.model";
-import { IsrsLoadedDTO } from "../../models/isrs-loaded.model";
-
-export const isrsLoaded = createAction(
-  "isr-consulenza/loaded",
-  props<{ isrs: IsrsLoadedDTO }>()
+export const setCurrentIsrId = createAction(
+  "init-isr/setCurrentIsrId",
+  props<{ payload: { fieldCurrentId: number } }>()
 );
 
-export const isrCreated = createAction(
-  "[Isr Consulenza API] Isr Created",
-  props<{ isr: IsrModel }>()
+export const showMessage = createAction(
+  "init-isr/showMessage",
+  props<{ payload: { fieldShow: boolean } }>()
 );
 
-export const isrUpdated = createAction(
-  "[Isr Consulenza API] Isr Updated",
-  props<{ isr: IsrModel }>()
-);
-
-export const isrDeleted = createAction(
-  "[Isr Consulenza API] Isr Deleted",
-  props<{ isrId: number }>()
+export const loadData = createAction(
+  "init-isr/loadData",
+  props<{ payload: {  fieldA: string, fieldB: string[], fieldC: number, fieldD: boolean  } }>()
 );

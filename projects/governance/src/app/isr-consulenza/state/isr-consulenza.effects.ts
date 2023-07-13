@@ -30,20 +30,20 @@ export class IsrConsulenzaEffects implements OnDestroy {
     { dispatch: false }
   );
 
-  openPublishDialog$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(IsrConsulenzaGuiActions.openPublishDialog),
-      takeUntil(this.destroy$),
-      exhaustMap(({ message }) => {
-        return this.dialogService.handleDialog$<PublishDialogComponent, string>(
-          PublishDialogComponent,
-          message || '',
-          IsrConsulenzaGuiActions.publishDialogOpened(),
-          IsrConsulenzaGuiActions.publishDialogClosed()
-        );
-      })
-    )
-  );
+  // openPublishDialog$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(IsrConsulenzaGuiActions.openPublishDialog),
+  //     takeUntil(this.destroy$),
+  //     exhaustMap(({ message }) => {
+  //       return this.dialogService.handleDialog$<PublishDialogComponent, string>(
+  //         PublishDialogComponent,
+  //         message || '',
+  //         IsrConsulenzaGuiActions.publishDialogOpened(),
+  //         IsrConsulenzaGuiActions.publishDialogClosed()
+  //       );
+  //     })
+  //   )
+  // );
 
   constructor(
     private readonly actions$: Actions,
