@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IsrConsulenzaComponent } from './isr-consulenza.component';
-
+// https://timdeschryver.dev/blog/testing-an-ngrx-project
 describe('IsrConsulenzaComponent', () => {
   let component: IsrConsulenzaComponent;
   let fixture: ComponentFixture<IsrConsulenzaComponent>;
