@@ -1,4 +1,4 @@
-<p class="p-container">
+<div class="p-container">
   <!-- <app-isr-consulenza-manager [currentIsr]="currentIsr$ | async" /> -->
   <button mat-flat-button (click)="openDialog()">Basic</button>
   <!-- <ng-component *ngIf="state$ | async as vm">
@@ -8,6 +8,9 @@
   <!-- <mat-list-item role="listitem" *ngFor="let link of isrs$ | async">Item ??</mat-list-item> -->
   <!-- </mat-list> -->
   <!-- <app-isr-consulenza-grid></app-isr-consulenza-grid> -->
-  <span>Msg: {{ lockItem$ | async }}</span>
-
-</p>
+  <hr />
+  <span>Msg (default auto generated selector): {{ lockItem$ | async }}</span>
+  <hr />
+  <span>Msg (the only one extra selector created): {{ lockItemMessageWithOtherText$ | async }}</span>
+  <hr />
+</div>

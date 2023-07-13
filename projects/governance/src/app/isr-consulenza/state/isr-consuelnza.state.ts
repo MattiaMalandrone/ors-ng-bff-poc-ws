@@ -1,7 +1,15 @@
+import * as fromRoot from '../../state/state';
+import { lockItem } from './actions/isr-consulenza-gui.actions';
 import { IsrConsulenzaApiActions, IsrConsulenzaGuiActions } from './actions';
-import { createReducer, on } from '@ngrx/store';
-
+import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 import { IsrModel } from '../models/isr.model';
+
+// Extends the app state to include the IsrConsulenzaState feature.
+// This is required because IsrConsulenzaState are lazy loaded.
+// So the reference to IsrConsulenzaState cannot be added to app.state.ts directly.
+export interface State extends fromRoot.AppState {
+  isrConsulenza: IsrConsulenzaState;
+}
 
 export interface IsrConsulenzaState {
   collection: IsrModel[];
@@ -39,7 +47,7 @@ export const initialState: IsrConsulenzaState = {
   lockItem: ""
 };
 
-export const isrConsulenzaReducer = createReducer(
+const isrConsulenzaReducer = createReducer(
   initialState,
   on(IsrConsulenzaGuiActions.selectIsr, (state, action) => {
     console.log(action);
@@ -101,3 +109,14 @@ export const isrConsulenzaReducer = createReducer(
   //   return adapter.removeOne(action.isrId, state);
   // })
 );
+
+export const isrConsulenzaFeature = createFeature({
+  name: "isrConsulenzaFeature",
+  reducer:  isrConsulenzaReducer,
+  extraSelectors: ({ selectLockItem }) => ({
+    selectMessageWithOtherText: createSelector(
+      selectLockItem,
+      (lockItem) => `:::::::::: ${lockItem} ::::::::`
+    )
+  })
+})
