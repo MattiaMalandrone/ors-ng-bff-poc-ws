@@ -29,6 +29,7 @@
       "dom"
     ]
   },
+  "exclude": [ "./projects/governance/cypress", "./projects/ui/cypress" ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
