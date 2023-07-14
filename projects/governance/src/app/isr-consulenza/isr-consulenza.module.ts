@@ -1,17 +1,17 @@
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NgModule, isDevMode } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { PushPipe } from '@ngrx/component';
+
 import { IsrConsulenzaComponent } from './isr-consulenza.component';
 import { IsrConsulenzaEffects } from './state/isr-consulenza.effects';
 import { IsrConsulenzaGridComponent } from './isr-consulenza-grid/isr-consulenza-grid.component';
 import { IsrConsulenzaManagerComponent } from './isr-consulenza-manager/isr-consulenza-manager.component';
-import { NgModule, isDevMode } from '@angular/core';
 import { SharedModule } from './../shared/shared.module';
-import { StoreModule } from '@ngrx/store';
 
-import * as fromIsrConsulenza from './state/isr-consuelnza.state';
+import * as fromIsrConsulenza from './state/isr-consulenza.state';
 
 const routes: Routes = [
   {
@@ -38,6 +38,7 @@ const routes: Routes = [
       trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
     }),
+
     SharedModule,
     PushPipe
   ]

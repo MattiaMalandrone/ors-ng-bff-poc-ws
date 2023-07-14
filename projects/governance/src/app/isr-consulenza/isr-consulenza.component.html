@@ -1,18 +1,47 @@
 <div class="p-container">
-  <!-- <app-isr-consulenza-manager [currentIsr]="currentIsr$ | async" /> -->
-  <!-- <button mat-flat-button (click)="openDialog()">Basic</button> -->
-  <!-- <ng-component *ngIf="state$ | async as vm">
-    {{vm.name}}
-  </ng-component> -->
-  <!-- <mat-list role="list"> -->
-  <!-- <mat-list-item role="listitem" *ngFor="let link of isrs$ | async">Item ??</mat-list-item> -->
-  <!-- </mat-list> -->
-  <!-- <app-isr-consulenza-grid></app-isr-consulenza-grid> -->
+
+  <button mat-flat-button (click)="updateTitle()">Basic</button>
+
+  <ng-container *ngIf="title$ | async as title; else loading">
+    <hr />
+    <strong>{{ title }}</strong>
+  </ng-container>
+
   <hr />
-  <span>Current ISR id: {{ currentIsrId$ | async }}</span>
+
+  <ng-container *ngIf="currentIsrId$ | async as currentIsrId; else loading">
+    <span>Current ISR id: {{ currentIsrId }}</span>
+  </ng-container>
+
   <hr />
-  <span>Show Message: {{ showMessage$ | async }}</span>
+
+  <ng-container *ngIf="showMessage$ | async as showMessage; else loading">
+    <span>Show Message: {{ showMessage }}</span>
+  </ng-container>
+
   <hr />
-  <span>Show Message: {{ messageCustom$ | async }}</span>
+
+  <ng-container *ngIf="messageCustom$ | async as messageCustom; else loading">
+    <span>Show Message CUSTOM: {{ messageCustom }}</span>
+  </ng-container>
+
   <hr />
+
+  <div style="background-color: blueviolet;">
+    <ng-container *ngIf="vm$ | async as vm; else loading">
+      {{vm | json}}
+      <hr />
+      <span>Current ISR id: {{ vm.currentIsrId }}</span>
+      <hr />
+      <span>Show Message: {{ vm.showMessage }}</span>
+      <hr />
+      <span>Show Message: {{ vm.fieldA }}</span>
+      <hr />
+    </ng-container>
+  </div>
+
 </div>
+
+<ng-template #loading>
+  waiting...
+</ng-template>
